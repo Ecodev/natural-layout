@@ -1,0 +1,18 @@
+{
+    "name": "natural-layout",
+    "version": "1.0.0",
+    "description": "CSS layout library",
+    "author": "Sam Baptista <samuel.baptista@ecodev.ch>",
+    "license": "MIT",
+    "scripts": {
+        "dev": "npm-run-all -p live-reload sass-watch",
+        "live-reload": "node ./node_modules/live-server/live-server.js docs ",
+        "sass-watch": "sass --watch src/natural-layout.scss docs/natural-layout.css",
+        "build": "sass src/natural-layout.scss dist/natural-layout.css"
+    },
+    "devDependencies": {
+        "live-server": "^1.2.2",
+        "npm-run-all": "^4.1.5",
+        "sass": "^1.75.0"
+    }
+}

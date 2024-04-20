@@ -1,0 +1,8 @@
+@use 'variables';
+
+@mixin media($key) {
+    $value: map-get(variables.$breakpoints, $key);
+    @media screen and #{$value} {
+        @content;
+    }
+}

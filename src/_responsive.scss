@@ -1,0 +1,28 @@
+@use 'variables';
+
+[class^="nat-show-"],
+[class*=" nat-show-"],
+{
+    display: none;
+}
+
+@each $key, $value in variables.$breakpoints {
+    @media screen and #{$value} {
+        .nat-show, .nat-show-#{$key} {
+            display: block;
+        }
+    }
+}
+
+[class^="nat-hide-"],
+[class*=" nat-hide-"] {
+    display: block;
+}
+
+@each $key, $value in variables.$breakpoints {
+    @media screen and #{$value} {
+        .nat-hide, .nat-hide-#{$key} {
+            display: none;
+        }
+    }
+}

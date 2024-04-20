@@ -1,0 +1,8 @@
+@use 'variables';
+@use 'responsive';
+@use 'gaps';
+@use 'positionning';
+
+html {
+    --natural-default-spacing: 20px;
+}

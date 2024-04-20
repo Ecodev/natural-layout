@@ -1,0 +1,167 @@
+@use 'variables';
+@use 'responsive';
+
+@mixin nat-vertical() {
+    display: flex;
+    flex-direction: column;
+
+    &.nat-top {
+        justify-content: flex-start;
+    }
+
+    &.nat-bottom {
+        justify-content: flex-end;
+    }
+
+    &.nat-left {
+        align-items: flex-start;
+    }
+
+    &.nat-right {
+        align-items: flex-end;
+    }
+}
+
+@mixin nat-horizontal() {
+    display: flex;
+    flex-direction: row;
+
+    &.nat-top {
+        align-items: flex-start;
+    }
+
+    &.nat-bottom {
+        align-items: flex-end;
+    }
+
+    &.nat-left {
+        justify-content: flex-start;
+    }
+
+    &.nat-right {
+        justify-content: flex-end;
+    }
+}
+
+@mixin nat-wrap-center() {
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    &.nat-center {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@mixin nat-center() {
+    display: grid;
+    place-content: center center;
+}
+
+:not(.nat-horizontal):not(.nat-vertical).nat-center {
+    @include nat-center();
+}
+
+@mixin nat-gap() {
+    gap: var(--natural-default-spacing);
+
+    &-1 {
+        gap: 1px;
+    }
+
+    &-5 {
+        gap: 5px;
+    }
+
+    &-10 {
+        gap: 10px;
+    }
+
+    &-15 {
+        gap: 15px;
+    }
+
+    &-20 {
+        gap: 20px;
+    }
+
+    &-30 {
+        gap: 30px;
+    }
+
+    &-50 {
+        gap: 50px;
+    }
+}
+
+
+@mixin nat-flex() {
+    flex: 1;
+
+    &-20 {
+        flex: 20;
+    }
+
+    &-25 {
+        flex: 25;
+    }
+
+    &-33 {
+        flex: 33;
+    }
+
+    &-50 {
+        flex: 50;
+    }
+
+    &-66 {
+        flex: 66;
+    }
+}
+
+
+.nat-vertical {
+    @include nat-vertical();
+}
+
+.nat-horizontal {
+    @include nat-horizontal();
+}
+
+.nat-horizontal,
+.nat-vertical {
+    @include nat-wrap-center();
+}
+
+.nat-gap {
+    @include nat-gap();
+}
+
+.nat-flex {
+    @include nat-flex();
+}
+
+@each $key, $value in variables.$breakpoints {
+    @media screen and #{$value} {
+        .nat-vertical-#{$key} {
+            @include nat-vertical();
+        }
+
+        .nat-horizontal-#{$key} {
+            @include nat-horizontal();
+        }
+
+        .nat-gap-#{$key} {
+            @include nat-gap();
+        }
+
+        .nat-flex-#{$key} {
+            @include nat-flex();
+        }
+    }
+}

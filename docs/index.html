@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="natural-layout.css">
+        <link rel="stylesheet" href="docs.css">
+    </head>
+    <body>
+
+        <h1>Responsive</h1>
+
+        <div class="media-scss-test">
+            media-scss-test : <br/>
+            @include media(md) {<br/>
+            ...<br/>
+            }
+        </div>
+
+        <div class="nat-vertical nat-gap test">
+            <div class="nat-padding">
+                <div class="nat-show-xs">nat-show-xs</div>
+                <div class="nat-show-sm">nat-show-sm</div>
+                <div class="nat-show-md">nat-show.md</div>
+                <div class="nat-show-lg">nat-show-lg</div>
+                <div class="nat-show-xl">nat-show-xl</div>
+            </div>
+            <div class="nat-padding">
+                <div class="nat-show-gt-xs">nat-show-gt-xs</div>
+                <div class="nat-show-gt-sm">nat-show-gt-sm</div>
+                <div class="nat-show-gt-md">nat-show-gt-md</div>
+            </div>
+            <div class="nat-padding">
+                <div class="nat-show-lt-md">nat-show-lt-md</div>
+                <div class="nat-show-lt-lg">nat-show-lt-lg</div>
+                <div class="nat-show-lt-xl">nat-show-lt-xl</div>
+            </div>
+            <div class="nat-horizontal nat-gap nat-padding">
+                <div class="nat-hide-xs">nat-hide-xs</div>
+                <div class="nat-hide-sm">nat-hide-sm</div>
+                <div class="nat-hide-md">nat-hide.md</div>
+                <div class="nat-hide-lg">nat-hide-lg</div>
+                <div class="nat-hide-xl">nat-hide-xl</div>
+            </div>
+            <div class="nat-padding">
+                <div class="nat-hide-gt-xs">nat-hide-gt-xs</div>
+                <div class="nat-hide-gt-sm">nat-hide-gt-sm</div>
+                <div class="nat-hide-gt-md">nat-hide-gt-md</div>
+            </div>
+            <div class="nat-padding">
+                <div class="nat-hide-lt-md">nat-hide-lt-md</div>
+                <div class="nat-hide-lt-lg">nat-hide-lt-lg</div>
+                <div class="nat-hide-lt-xl">nat-hide-lt-xl</div>
+            </div>
+
+        </div>
+
+        <h1>nat-padding</h1>
+        <div class="test">
+
+            <!-- nat-padding test -->
+            <div class="nat-padding">
+                <div>nat-padding</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-padding-vertical">
+                <div>nat-padding-vertical</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-padding-h">
+                <div>nat-padding-h</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+        </div>
+
+        <h1>nat-margin</h1>
+        <div class="test">
+            <!-- nat-margin test -->
+            <div class="nat-margin">
+                <div>nat-margin</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-margin-vertical">
+                <div>nat-margin-vertical</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-margin-h">
+                <div>nat-margin-h</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+        </div>
+
+        <div class="test nat-vertical nat-gap">
+
+            <h1>Flex horizontal</h1>
+            <div class="nat-horizontal">
+                <div>nat-horizontal</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap">
+                <div>nat-horizontal nat-gap</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap-30 wrap">
+                <div>nat-horizontal nat-gap-30 wrap</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap">
+                <div>xxx</div>
+                <div class="nat-flex">flex</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap">
+                <div class="nat-flex-33 nat-flex-gt-md-66">nat-flex-33 nat-flex-gt-md-66</div>
+                <div class="nat-flex-66 nat-flex-gt-md-33">nat-flex-66 nat-flex-gt-md-33</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap nat-top">
+                <div>nat-horizontal nat-gap nat-top</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap nat-right nat-top">
+                <div>nat-horizontal nat-gap nat-right</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap nat-bottom">
+                <div>nat-horizontal nat-gap nat-bottom</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap nat-left nat-bottom">
+                <div>nat-horizontal nat-gap nat-left</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap nat-center" style="height:80px;">
+                <div>nat-horizontal nat-gap nat-center</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+            <h1>Flex vertical</h1>
+            <div class="nat-vertical nat-gap nat-top nat-left" style="height:200px;">
+                <div>nat-vertical nat-gap nat-top</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-vertical nat-gap nat-right nat-top" style="height:200px;">
+                <div>nat-vertical nat-gap nat-right</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-vertical nat-gap nat-bottom nat-right" style="height:200px;">
+                <div>nat-vertical nat-gap nat-bottom</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-vertical nat-gap nat-left nat-bottom" style="height:200px;">
+                <div>nat-vertical nat-gap nat-left</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-vertical-lt-lg nat-gap">
+                <div>nat-horizontal nat-vertical-lt-lg</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-vertical nat-horizontal-lt-lg nat-gap">
+                <div>nat-vertical nat-horizontal-lt-lg</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <div class="nat-horizontal nat-gap nat-gap-gt-sm-50">
+                <div>nat-gap nat-gap-gt-sm-50</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
+
+            <h1>Center</h1>
+
+            <div class="nat-center" style="height:150px;">
+                <div>nat-center</div>
+                <div>lorem
+                    <br/>
+                    ipsum
+                </div>
+                <div>xxx</div>
+            </div>
+
+        </div>
+
+
+    </body>
+</html>
