@@ -1,8 +1,16 @@
 @use 'variables';
 
-@mixin media($key) {
-    $value: map-get(variables.$breakpoints, $key);
-    @media screen and #{$value} {
+@mixin gte($key) {
+    $start: map-get(variables.$breakpoints, $key);
+    @media screen and (min-width: #{$start}) {
+        @content;
+    }
+}
+
+@mixin between($low, $high) {
+    $low: map-get(variables.$breakpoints, $low);
+    $high: map-get(variables.$breakpoints, $high);
+    @media screen and (min-width: #{$low}) and (max-width: #{$high - 0.02}) {
         @content;
     }
 }

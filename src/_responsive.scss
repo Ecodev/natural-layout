@@ -1,27 +1,20 @@
 @use 'variables';
+@use 'mixins';
 
-[class^="nat-show-"],
-[class*=" nat-show-"],
-{
+.nat-show {
+    display: block;
+}
+
+.nat-hide {
     display: none;
 }
 
 @each $key, $value in variables.$breakpoints {
-    @media screen and #{$value} {
-        .nat-show, .nat-show-#{$key} {
+    @include mixins.gte($key) {
+        .#{$key}-nat-show {
             display: block;
         }
-    }
-}
-
-[class^="nat-hide-"],
-[class*=" nat-hide-"] {
-    display: block;
-}
-
-@each $key, $value in variables.$breakpoints {
-    @media screen and #{$value} {
-        .nat-hide, .nat-hide-#{$key} {
+        .#{$key}-nat-hide {
             display: none;
         }
     }

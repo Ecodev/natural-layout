@@ -1,46 +1,22 @@
 @use 'variables';
 @use 'responsive';
+@use 'mixins';
+
+.nat-fill {
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+}
 
 @mixin nat-vertical() {
     display: flex;
     flex-direction: column;
-
-    &.nat-top {
-        justify-content: flex-start;
-    }
-
-    &.nat-bottom {
-        justify-content: flex-end;
-    }
-
-    &.nat-left {
-        align-items: flex-start;
-    }
-
-    &.nat-right {
-        align-items: flex-end;
-    }
 }
 
 @mixin nat-horizontal() {
     display: flex;
     flex-direction: row;
-
-    &.nat-top {
-        align-items: flex-start;
-    }
-
-    &.nat-bottom {
-        align-items: flex-end;
-    }
-
-    &.nat-left {
-        justify-content: flex-start;
-    }
-
-    &.nat-right {
-        justify-content: flex-end;
-    }
 }
 
 @mixin nat-wrap-center() {
@@ -100,7 +76,7 @@
 }
 
 
-@mixin nat-flex() {
+@mixin nat-expand() {
     flex: 1;
 
     &-20 {
@@ -127,10 +103,50 @@
 
 .nat-vertical {
     @include nat-vertical();
+
+    &.nat-top {
+        justify-content: flex-start;
+    }
+
+    &.nat-bottom {
+        justify-content: flex-end;
+    }
+
+    &.nat-left {
+        align-items: flex-start;
+    }
+
+    &.nat-right {
+        align-items: flex-end;
+    }
+
+    &.nat-distribute {
+        justify-content: space-between;
+    }
 }
 
 .nat-horizontal {
     @include nat-horizontal();
+
+    &.nat-top {
+        align-items: flex-start;
+    }
+
+    &.nat-bottom {
+        align-items: flex-end;
+    }
+
+    &.nat-left {
+        justify-content: flex-start;
+    }
+
+    &.nat-right {
+        justify-content: flex-end;
+    }
+
+    &.nat-distribute {
+        justify-content: space-between;
+    }
 }
 
 .nat-horizontal,
@@ -142,26 +158,26 @@
     @include nat-gap();
 }
 
-.nat-flex {
-    @include nat-flex();
+.nat-expand {
+    @include nat-expand();
 }
 
 @each $key, $value in variables.$breakpoints {
-    @media screen and #{$value} {
-        .nat-vertical-#{$key} {
+    @include mixins.gte($key) {
+        .#{$key}-nat-vertical {
             @include nat-vertical();
         }
 
-        .nat-horizontal-#{$key} {
+        .#{$key}-nat-horizontal {
             @include nat-horizontal();
         }
 
-        .nat-gap-#{$key} {
+        .#{$key}-nat-gap {
             @include nat-gap();
         }
 
-        .nat-flex-#{$key} {
-            @include nat-flex();
+        .#{$key}-nat-expand {
+            @include nat-expand();
         }
     }
 }

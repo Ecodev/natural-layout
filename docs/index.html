@@ -2,260 +2,272 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>@ecodev/natural-layout</title>
         <link rel="stylesheet" href="natural-layout.css">
         <link rel="stylesheet" href="docs.css">
     </head>
     <body>
 
-        <h1>Responsive</h1>
-
-        <div class="media-scss-test">
-            media-scss-test : <br/>
-            @include media(md) {<br/>
-            ...<br/>
-            }
+        <div id="current-breakpoint">
+            <div class="docs-xs sm-nat-hide">XS</div>
+            <div class="docs-sm nat-hide sm-nat-show md-nat-hide">SM</div>
+            <div class="docs-md nat-hide md-nat-show lg-nat-hide">MD</div>
+            <div class="docs-lg nat-hide lg-nat-show xl-nat-hide">LG</div>
+            <div class="docs-xl nat-hide xl-nat-show nat-hide">XL</div>
         </div>
 
-        <div class="nat-vertical nat-gap test">
-            <div class="nat-padding">
-                <div class="nat-show-xs">nat-show-xs</div>
-                <div class="nat-show-sm">nat-show-sm</div>
-                <div class="nat-show-md">nat-show.md</div>
-                <div class="nat-show-lg">nat-show-lg</div>
-                <div class="nat-show-xl">nat-show-xl</div>
-            </div>
-            <div class="nat-padding">
-                <div class="nat-show-gt-xs">nat-show-gt-xs</div>
-                <div class="nat-show-gt-sm">nat-show-gt-sm</div>
-                <div class="nat-show-gt-md">nat-show-gt-md</div>
-            </div>
-            <div class="nat-padding">
-                <div class="nat-show-lt-md">nat-show-lt-md</div>
-                <div class="nat-show-lt-lg">nat-show-lt-lg</div>
-                <div class="nat-show-lt-xl">nat-show-lt-xl</div>
-            </div>
-            <div class="nat-horizontal nat-gap nat-padding">
-                <div class="nat-hide-xs">nat-hide-xs</div>
-                <div class="nat-hide-sm">nat-hide-sm</div>
-                <div class="nat-hide-md">nat-hide.md</div>
-                <div class="nat-hide-lg">nat-hide-lg</div>
-                <div class="nat-hide-xl">nat-hide-xl</div>
-            </div>
-            <div class="nat-padding">
-                <div class="nat-hide-gt-xs">nat-hide-gt-xs</div>
-                <div class="nat-hide-gt-sm">nat-hide-gt-sm</div>
-                <div class="nat-hide-gt-md">nat-hide-gt-md</div>
-            </div>
-            <div class="nat-padding">
-                <div class="nat-hide-lt-md">nat-hide-lt-md</div>
-                <div class="nat-hide-lt-lg">nat-hide-lt-lg</div>
-                <div class="nat-hide-lt-xl">nat-hide-lt-xl</div>
-            </div>
+        <ul>
+            <li><a href="#section-start">Start</a></li>
+            <li>
+            <li><strong>Unresponsive</strong>
+                <ul>
+                    <li><a href="#section-padding">Padding</a></li>
+                    <li><a href="#section-margin">Margin</a></li>
+                    <li><a href="#section-alignments">Alignments</a></li>
+                    <li><a href="#section-center">Center</a></li>
+                </ul>
+            </li>
+            <li><strong>Responsive</strong>
+                <ul>
+                    <li><a href="#section-hide">Show/Hide</a></li>
+                    <li><a href="#section-gap">Gap</a></li>
+                    <li><a href="#section-horizontal">Horizontal</a></li>
+                    <li><a href="#section-vertical">Vertical</a></li>
+                    <li><a href="#section-expand">Expand</a></li>
+                </ul>
+            </li>
+        </ul>
 
+        <h1 id="section-start">Getting started</h1>
+
+        <p>Available breakpoints prefixes : xs, sm, md, lg, xl.</p>
+
+        <p><strong>Usage : </strong> <span class="docs-class">class="[breakpoint-]nat-class[-size]"</span></p>
+
+        <strong>Examples : </strong>
+        <p>Greater than medium (included) change layout to horizontal</p>
+        <pre>
+class="nat-vertical  md-nat-horizontal" </pre>
+
+        <p>Greater than medium (included) increase gap</p>
+        <pre>
+class="nat-gap  md-nat-gap-50" </pre>
+
+
+        <h1>SCSS usage : media query</h1>
+
+        <pre>@use '@ecodev/natural-layout' as nat;</pre>
+
+        <pre class="media-scss-test">
+#id {
+    // apply max-width for sizes bigger than md (included)
+    @include nat.gte(md) {
+        max-width: 80%;
+    }
+
+    // apply color red for sm and md sizes
+    @include nat.between(sm, lg) {
+        color: red;
+    }
+}</pre>
+
+        <h1>Unresponsive html markup</h1>
+
+        <h2 id="section-padding">nat-padding</h2>
+        <p>Padding on all sides / top and down / left and right : </p>
+        <div class="test docs-no-padding">
+            <div class="nat-padding">nat-padding</div>
+            <div class="nat-padding-vertical">nat-padding-vertical</div>
+            <div class="nat-padding-horizontal">nat-padding-horizontal</div>
         </div>
 
-        <h1>nat-padding</h1>
+
+        <h2 id="section-margin">nat-margin</h2>
+        <p>Margin on all sides / top and bottom / left and right :</p>
+        <div class="test docs-no-margin">
+            <div class="nat-margin">nat-margin</div>
+            <div class="nat-margin-vertical">nat-margin-vertical</div>
+            <div class="nat-margin-horizontal">nat-margin-horizontal</div>
+        </div>
+
+        <h2 id="section-alignments">Alignments</h2>
+        <p>Alignments <strong>nat-bottom, nat-top, nat-left, nat-right</strong> can be combined.</p>
+        <p>Align bottom right</p>
+        <span class="docs-class">nat-horizontal nat-bottom nat-right</span>
+        <div class="test nat-horizontal nat-bottom nat-right" style="height:100px">
+            <div>xxx</div>
+            <div>xxx
+                <br/>
+                xxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <p>Distribute uses space-around</p>
+        <span class="docs-class">nat-distribute</span>
+        <div class="test nat-horizontal nat-distribute" style="height:100px;">
+            <div>xxx</div>
+            <div>xxxxxxx
+                <br/>
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <h2 id="section-center">Center</h2>
+        <p>Horizontal center</p>
+        <span class="docs-class">nat-horizontal nat-center</span>
+        <div class="test nat-horizontal nat-center" style="height:100px;">
+            <div>xxx</div>
+            <div>xxxxxxx
+                <br/>
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <p>Vertical center</p>
+        <span class="docs-class">nat-vertical nat-center</span>
+        <div class="test nat-vertical nat-center" style="height:150px;">
+            <div>xxx</div>
+            <div>xxxxxxx
+                <br/>
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <p>Grid center :</p>
+        <span class="docs-class">nat-center</span>
+        <div class="test nat-center" style="height:150px;">
+            <div>xxx</div>
+            <div>xxxxxxx
+                <br/>
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+
+        <h1>Responsive HTML markup</h1>
+        <h2 id="section-hide">nat-hide</h2>
+        <p>Usage : <span class="docs-class">nat-hide / sm-nat-hide / nat-show / sm-nat-show</span></p>
+
+        <p>Breakpoints are only the start of size. To focus a single size, combine multiple classes</p>
+
+        <p>Show only current size</p>
         <div class="test">
-
-            <!-- nat-padding test -->
-            <div class="nat-padding">
-                <div>nat-padding</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-padding-vertical">
-                <div>nat-padding-vertical</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-padding-h">
-                <div>nat-padding-h</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
+            <div class="docs-xs sm-nat-hide">XS only</div>
+            <div class="docs-sm nat-hide sm-nat-show md-nat-hide">SM only</div>
+            <div class="docs-md nat-hide md-nat-show lg-nat-hide">MD only</div>
+            <div class="docs-lg nat-hide lg-nat-show xl-nat-hide">LG only</div>
+            <div class="docs-xl nat-hide xl-nat-show nat-hide">XL only</div>
         </div>
 
-        <h1>nat-margin</h1>
+        <p>Show from current size and more</p>
+        Example for medium : <span class="docs-class">nat-hide md-nat-show</span>
         <div class="test">
-            <!-- nat-margin test -->
-            <div class="nat-margin">
-                <div>nat-margin</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-margin-vertical">
-                <div>nat-margin-vertical</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-margin-h">
-                <div>nat-margin-h</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
+            <div class="docs-xs">XS (no need class, mobile first)</div>
+            <div class="docs-sm nat-hide sm-nat-show">SM</div>
+            <div class="docs-md nat-hide md-nat-show">MD</div>
+            <div class="docs-lg nat-hide lg-nat-show">LG</div>
+            <div class="docs-xl nat-hide xl-nat-show">XL</div>
         </div>
 
-        <div class="test nat-vertical nat-gap">
-
-            <h1>Flex horizontal</h1>
-            <div class="nat-horizontal">
-                <div>nat-horizontal</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap">
-                <div>nat-horizontal nat-gap</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap-30 wrap">
-                <div>nat-horizontal nat-gap-30 wrap</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap">
-                <div>xxx</div>
-                <div class="nat-flex">flex</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap">
-                <div class="nat-flex-33 nat-flex-gt-md-66">nat-flex-33 nat-flex-gt-md-66</div>
-                <div class="nat-flex-66 nat-flex-gt-md-33">nat-flex-66 nat-flex-gt-md-33</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap nat-top">
-                <div>nat-horizontal nat-gap nat-top</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap nat-right nat-top">
-                <div>nat-horizontal nat-gap nat-right</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap nat-bottom">
-                <div>nat-horizontal nat-gap nat-bottom</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap nat-left nat-bottom">
-                <div>nat-horizontal nat-gap nat-left</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap nat-center" style="height:80px;">
-                <div>nat-horizontal nat-gap nat-center</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
-            <h1>Flex vertical</h1>
-            <div class="nat-vertical nat-gap nat-top nat-left" style="height:200px;">
-                <div>nat-vertical nat-gap nat-top</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-vertical nat-gap nat-right nat-top" style="height:200px;">
-                <div>nat-vertical nat-gap nat-right</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-vertical nat-gap nat-bottom nat-right" style="height:200px;">
-                <div>nat-vertical nat-gap nat-bottom</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-vertical nat-gap nat-left nat-bottom" style="height:200px;">
-                <div>nat-vertical nat-gap nat-left</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-vertical-lt-lg nat-gap">
-                <div>nat-horizontal nat-vertical-lt-lg</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-vertical nat-horizontal-lt-lg nat-gap">
-                <div>nat-vertical nat-horizontal-lt-lg</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <div class="nat-horizontal nat-gap nat-gap-gt-sm-50">
-                <div>nat-gap nat-gap-gt-sm-50</div>
-                <div>xxx</div>
-                <div>xxx</div>
-            </div>
-
-            <h1>Center</h1>
-
-            <div class="nat-center" style="height:150px;">
-                <div>nat-center</div>
-                <div>lorem
-                    <br/>
-                    ipsum
-                </div>
-                <div>xxx</div>
-            </div>
-
+        <p>Hide only in current size</p>
+        Example for medium : <span class="docs-class">nat-show md-nat-hide lg-nat-show</span>
+        <div class="test">
+            <div class="docs-xs nat-hide sm-nat-show">XS</div>
+            <div class="docs-sm nat-show sm-nat-hide md-nat-show">SM</div>
+            <div class="docs-md nat-show md-nat-hide lg-nat-show">MD</div>
+            <div class="docs-lg nat-show lg-nat-hide xl-nat-show">LG</div>
+            <div class="docs-xl nat-show xl-nat-hide">XL</div>
         </div>
 
+        <p>Hide from current size and more</p>
+        <div class="test">
+            <div class="docs-sm sm-nat-hide">&lt;= SM</div>
+            <div class="docs-md md-nat-hide">&lt;= MD</div>
+            <div class="docs-lg lg-nat-hide">&lt;= LG</div>
+            <div class="docs-xl xl-nat-hide">&lt;= XL</div>
+        </div>
+
+        <h2 id="section-gap">nat-gap</h2>
+        <p>Must be combined with nat-horizontal or nat-vertical.</p>
+        <p>Sizes : <strong>1, 5, 10, 15, 20, 30, 50</strong></p>
+        <p>Example where gap increases with screen size :</p>
+        <span class="docs-class">nat-gap-1  nat-gap-1  sm-nat-gap-20  md-nat-gap-50</span>
+        <div class="test nat-horizontal nat-gap-1 sm-nat-gap-20 md-nat-gap-50">
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+        </div>
+
+        <h2 id="section-horizontal">nat-horizontal</h2>
+        <span class="docs-class">nat-horizontal</span>
+        <div class="test nat-horizontal">
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+        </div>
+
+        <p>Wrap</p>
+        <span class="docs-class">nat-horizontal wrap</span>
+        <div class="test nat-horizontal wrap">
+            <div>aaa</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>zzz</div>
+        </div>
+
+        <h2 id="section-vertical">nat-vertical</h2>
+        <span class="docs-class">nat-vertical</span>
+        <div class="test nat-vertical">
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+        </div>
+
+        <p>Align bottom right</p>
+        <span class="docs-class">nat-vertical nat-bottom nat-right</span>
+        <div class="test nat-vertical nat-bottom nat-right" style="height:200px">
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+        </div>
+
+        <p>Change orientation, starting mobile first vertically, then horizontal since medium :</p>
+        <span class="docs-class">nat-vertical md-nat-horizontal </span>
+        <div class="test nat-vertical md-nat-horizontal">
+            <div>xxx</div>
+            <div>xxx</div>
+            <div>xxx</div>
+        </div>
+
+        <h2 id="section-expand">expand</h2>
+        <p>Apply on nat-horizontal or nat-vertical children.</p>
+        <div class="test nat-horizontal nat-gap">
+            <div>xxx</div>
+            <div class="nat-expand">expand</div>
+            <div>xxx</div>
+        </div>
+
+        <p>Proportions change when greater than medium (included) : </p>
+        <div class="test nat-horizontal nat-gap">
+            <div class="nat-expand-33 md-nat-expand-66">nat-expand-33 md-nat-expand-66</div>
+            <div class="nat-expand-66 md-nat-expand-33">nat-expand-66 md-nat-expand-33</div>
+        </div>
 
     </body>
 </html>

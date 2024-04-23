@@ -7,8 +7,8 @@
     "scripts": {
         "dev": "npm-run-all -p live-reload sass-watch",
         "live-reload": "node ./node_modules/live-server/live-server.js docs ",
-        "sass-watch": "sass --watch src/natural-layout.scss docs/natural-layout.css",
-        "build": "sass src/natural-layout.scss dist/natural-layout.css"
+        "sass-watch": "sass --watch src/main.scss docs/natural-layout.css",
+        "build": "sass src/main.scss dist/natural-layout.css"
     },
     "devDependencies": {
         "live-server": "^1.2.2",
