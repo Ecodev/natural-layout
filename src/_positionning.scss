@@ -164,19 +164,19 @@
 
 @each $key, $value in variables.$breakpoints {
     @include mixins.gte($key) {
-        .#{$key}-nat-vertical {
+        .nat-#{$key}-vertical {
             @include nat-vertical();
         }
 
-        .#{$key}-nat-horizontal {
+        .nat-#{$key}-horizontal {
             @include nat-horizontal();
         }
 
-        .#{$key}-nat-gap {
+        .nat-#{$key}-gap {
             @include nat-gap();
         }
 
-        .#{$key}-nat-expand {
+        .nat-#{$key}-expand {
             @include nat-expand();
         }
     }

@@ -11,10 +11,10 @@
 
 @each $key, $value in variables.$breakpoints {
     @include mixins.gte($key) {
-        .#{$key}-nat-show {
+        .nat-#{$key}-show {
             display: block;
         }
-        .#{$key}-nat-hide {
+        .nat-#{$key}-hide {
             display: none;
         }
     }

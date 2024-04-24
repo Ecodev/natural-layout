@@ -9,11 +9,11 @@
     <body>
 
         <div id="current-breakpoint">
-            <div class="docs-xs sm-nat-hide">XS</div>
-            <div class="docs-sm nat-hide sm-nat-show md-nat-hide">SM</div>
-            <div class="docs-md nat-hide md-nat-show lg-nat-hide">MD</div>
-            <div class="docs-lg nat-hide lg-nat-show xl-nat-hide">LG</div>
-            <div class="docs-xl nat-hide xl-nat-show nat-hide">XL</div>
+            <div class="docs-xs nat-sm-hide">XS</div>
+            <div class="docs-sm nat-hide nat-sm-show nat-md-hide">SM</div>
+            <div class="docs-md nat-hide nat-md-show nat-lg-hide">MD</div>
+            <div class="docs-lg nat-hide nat-lg-show nat-xl-hide">LG</div>
+            <div class="docs-xl nat-hide nat-xl-show nat-hide">XL</div>
         </div>
 
         <ul>
@@ -47,11 +47,11 @@
         <strong>Examples : </strong>
         <p>Greater than medium (included) change layout to horizontal</p>
         <pre>
-class="nat-vertical  md-nat-horizontal" </pre>
+class="nat-vertical  nat-md-horizontal" </pre>
 
         <p>Greater than medium (included) increase gap</p>
         <pre>
-class="nat-gap  md-nat-gap-50" </pre>
+class="nat-gap  nat-md-gap-50" </pre>
 
 
         <h1>SCSS usage : media query</h1>
@@ -151,53 +151,53 @@ class="nat-gap  md-nat-gap-50" </pre>
 
         <h1>Responsive HTML markup</h1>
         <h2 id="section-hide">nat-hide</h2>
-        <p>Usage : <span class="docs-class">nat-hide / sm-nat-hide / nat-show / sm-nat-show</span></p>
+        <p>Usage : <span class="docs-class">nat-hide / nat-sm-hide / nat-show / nat-sm-show</span></p>
 
         <p>Breakpoints are only the start of size. To focus a single size, combine multiple classes</p>
 
         <p>Show only current size</p>
         <div class="test">
-            <div class="docs-xs sm-nat-hide">XS only</div>
-            <div class="docs-sm nat-hide sm-nat-show md-nat-hide">SM only</div>
-            <div class="docs-md nat-hide md-nat-show lg-nat-hide">MD only</div>
-            <div class="docs-lg nat-hide lg-nat-show xl-nat-hide">LG only</div>
-            <div class="docs-xl nat-hide xl-nat-show nat-hide">XL only</div>
+            <div class="docs-xs nat-sm-hide">XS only</div>
+            <div class="docs-sm nat-hide nat-sm-show nat-md-hide">SM only</div>
+            <div class="docs-md nat-hide nat-md-show nat-lg-hide">MD only</div>
+            <div class="docs-lg nat-hide nat-lg-show nat-xl-hide">LG only</div>
+            <div class="docs-xl nat-hide nat-xl-show nat-hide">XL only</div>
         </div>
 
         <p>Show from current size and more</p>
-        Example for medium : <span class="docs-class">nat-hide md-nat-show</span>
+        Example for medium : <span class="docs-class">nat-hide nat-md-show</span>
         <div class="test">
             <div class="docs-xs">XS (no need class, mobile first)</div>
-            <div class="docs-sm nat-hide sm-nat-show">SM</div>
-            <div class="docs-md nat-hide md-nat-show">MD</div>
-            <div class="docs-lg nat-hide lg-nat-show">LG</div>
-            <div class="docs-xl nat-hide xl-nat-show">XL</div>
+            <div class="docs-sm nat-hide nat-sm-show">SM</div>
+            <div class="docs-md nat-hide nat-md-show">MD</div>
+            <div class="docs-lg nat-hide nat-lg-show">LG</div>
+            <div class="docs-xl nat-hide nat-xl-show">XL</div>
         </div>
 
         <p>Hide only in current size</p>
-        Example for medium : <span class="docs-class">nat-show md-nat-hide lg-nat-show</span>
+        Example for medium : <span class="docs-class">nat-show nat-md-hide nat-lg-show</span>
         <div class="test">
-            <div class="docs-xs nat-hide sm-nat-show">XS</div>
-            <div class="docs-sm nat-show sm-nat-hide md-nat-show">SM</div>
-            <div class="docs-md nat-show md-nat-hide lg-nat-show">MD</div>
-            <div class="docs-lg nat-show lg-nat-hide xl-nat-show">LG</div>
-            <div class="docs-xl nat-show xl-nat-hide">XL</div>
+            <div class="docs-xs nat-hide nat-sm-show">XS</div>
+            <div class="docs-sm nat-show nat-sm-hide nat-md-show">SM</div>
+            <div class="docs-md nat-show nat-md-hide nat-lg-show">MD</div>
+            <div class="docs-lg nat-show nat-lg-hide nat-xl-show">LG</div>
+            <div class="docs-xl nat-show nat-xl-hide">XL</div>
         </div>
 
         <p>Hide from current size and more</p>
         <div class="test">
-            <div class="docs-sm sm-nat-hide">&lt;= SM</div>
-            <div class="docs-md md-nat-hide">&lt;= MD</div>
-            <div class="docs-lg lg-nat-hide">&lt;= LG</div>
-            <div class="docs-xl xl-nat-hide">&lt;= XL</div>
+            <div class="docs-sm nat-sm-hide">&lt;= SM</div>
+            <div class="docs-md nat-md-hide">&lt;= MD</div>
+            <div class="docs-lg nat-lg-hide">&lt;= LG</div>
+            <div class="docs-xl nat-xl-hide">&lt;= XL</div>
         </div>
 
         <h2 id="section-gap">nat-gap</h2>
         <p>Must be combined with nat-horizontal or nat-vertical.</p>
         <p>Sizes : <strong>1, 5, 10, 15, 20, 30, 50</strong></p>
         <p>Example where gap increases with screen size :</p>
-        <span class="docs-class">nat-gap-1  nat-gap-1  sm-nat-gap-20  md-nat-gap-50</span>
-        <div class="test nat-horizontal nat-gap-1 sm-nat-gap-20 md-nat-gap-50">
+        <span class="docs-class">nat-gap-1  nat-gap-1  nat-sm-gap-20  nat-md-gap-50</span>
+        <div class="test nat-horizontal nat-gap-1 nat-sm-gap-20 nat-md-gap-50">
             <div>xxx</div>
             <div>xxx</div>
             <div>xxx</div>
@@ -248,8 +248,8 @@ class="nat-gap  md-nat-gap-50" </pre>
         </div>
 
         <p>Change orientation, starting mobile first vertically, then horizontal since medium :</p>
-        <span class="docs-class">nat-vertical md-nat-horizontal </span>
-        <div class="test nat-vertical md-nat-horizontal">
+        <span class="docs-class">nat-vertical nat-md-horizontal </span>
+        <div class="test nat-vertical nat-md-horizontal">
             <div>xxx</div>
             <div>xxx</div>
             <div>xxx</div>
@@ -265,8 +265,8 @@ class="nat-gap  md-nat-gap-50" </pre>
 
         <p>Proportions change when greater than medium (included) : </p>
         <div class="test nat-horizontal nat-gap">
-            <div class="nat-expand-33 md-nat-expand-66">nat-expand-33 md-nat-expand-66</div>
-            <div class="nat-expand-66 md-nat-expand-33">nat-expand-66 md-nat-expand-33</div>
+            <div class="nat-expand-33 nat-md-expand-66">nat-expand-33 nat-md-expand-66</div>
+            <div class="nat-expand-66 nat-md-expand-33">nat-expand-66 nat-md-expand-33</div>
         </div>
 
     </body>
