@@ -210,12 +210,12 @@
   justify-content: space-between;
 }
 
-.nat-horizontal.wrap,
-.nat-vertical.wrap {
+.nat-horizontal.nat-wrap,
+.nat-vertical.nat-wrap {
   flex-wrap: wrap;
 }
-.nat-horizontal.wrap-reverse,
-.nat-vertical.wrap-reverse {
+.nat-horizontal.nat-wrap-reverse,
+.nat-vertical.nat-wrap-reverse {
   flex-wrap: wrap-reverse;
 }
 .nat-horizontal.nat-center,

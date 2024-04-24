@@ -20,11 +20,11 @@
 }
 
 @mixin nat-wrap-center() {
-    &.wrap {
+    &.nat-wrap {
         flex-wrap: wrap;
     }
 
-    &.wrap-reverse {
+    &.nat-wrap-reverse {
         flex-wrap: wrap-reverse;
     }
 
