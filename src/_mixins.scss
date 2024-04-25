@@ -1,15 +1,23 @@
 @use 'variables';
 
+@function map-get-strict($map, $key) {
+    @if map-has-key($map, $key) {
+        @return map-get($map, $key);
+    } @else {
+        @error "Specified key '#{$key}' does not exist in the map";
+    }
+}
+
 @mixin gte($key) {
-    $start: map-get(variables.$breakpoints, $key);
+    $start: map-get-strict(variables.$breakpoints, $key);
     @media screen and (min-width: #{$start}) {
         @content;
     }
 }
 
 @mixin between($low, $high) {
-    $low: map-get(variables.$breakpoints, $low);
-    $high: map-get(variables.$breakpoints, $high);
+    $low: map-get-strict(variables.$breakpoints, $low);
+    $high: map-get-strict(variables.$breakpoints, $high);
     @media screen and (min-width: #{$low}) and (max-width: #{$high - 0.02}) {
         @content;
     }
