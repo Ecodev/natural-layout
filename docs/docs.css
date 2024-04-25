@@ -1,120 +1,160 @@
 html {
-    font-size: 16px;
-    font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 h1, h2, h3 {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 pre {
-    padding: 20px;
+  padding: 20px;
 }
 
 p {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.comment {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 pre,
 .test {
-    background: rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    padding: 16px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 16px;
 }
 
 .test {
-    margin-bottom: 30px;
-
-    & > div {
-        background: #ff4141;
-        color: white;
-        border-radius: 4px;
-        font-size: 18px;
-    }
-
-    &:not(.docs-no-margin) div {
-        margin: 0 2px 2px 0;
-    }
-
-    &:not(.docs-no-padding) div {
-        padding: 6px 12px;
-    }
+  margin-bottom: 30px;
+}
+.test > div {
+  background: #ff4141;
+  color: white;
+  border-radius: 4px;
+  font-size: 18px;
+}
+.test:not(.docs-no-margin) div {
+  margin: 0 2px 2px 0;
+}
+.test:not(.docs-no-padding) div {
+  padding: 6px 12px;
 }
 
 #current-breakpoint {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-
-    div {
-        color: white;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
-        font-size: 40px;
-        padding: 20px;
-        border-radius: 10px;
-    }
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+}
+#current-breakpoint div {
+  color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
+#inner-width {
+  background: rgb(63, 63, 63) !important;
+}
 
 .docs-xs {
-    color: white !important;
-    border: none !important;
-    background: rgb(255, 0, 0) !important;
+  color: white !important;
+  border: none !important;
+  background: rgb(255, 0, 0) !important;
 }
 
 .docs-sm {
-    color: white !important;
-    border: none !important;
-    background: rgb(37, 189, 0) !important;
+  color: white !important;
+  border: none !important;
+  background: rgb(37, 189, 0) !important;
 }
 
 .docs-md {
-    color: white !important;
-    border: none !important;
-    background: rgba(0, 142, 255) !important;
+  color: white !important;
+  border: none !important;
+  background: rgb(0, 142, 255) !important;
 }
 
 .docs-lg {
-    color: white !important;
-    border: none !important;
-    background: rgb(231, 164, 0) !important;
+  color: white !important;
+  border: none !important;
+  background: rgb(231, 164, 0) !important;
 }
 
 .docs-xl {
-    color: white !important;
-    border: none !important;
-    background: rgb(238, 0, 255) !important;
+  color: white !important;
+  border: none !important;
+  background: rgb(238, 0, 255) !important;
 }
 
 .docs-class {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 5px;
-    color: white;
-    background: rgb(0, 156, 224);
-    border-radius: 10px;
-    font-family: monospace;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 5px;
+  color: white;
+  background: rgb(0, 156, 224);
+  border-radius: 10px;
+  font-family: monospace;
 }
 
 a {
-    color: rgb(0, 156, 224);
+  color: rgb(0, 156, 224);
 }
 
 a:hover {
-    color: red;
+  color: red;
 }
 
 ul, li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
+@media screen and (max-width: 599.8px ) {
+  .media-xs {
+    background: rgb(37, 189, 0) !important;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 959.8px ) {
+  .media-sm {
+    background: rgb(37, 189, 0) !important;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1279.8px ) {
+  .media-md {
+    background: rgb(37, 189, 0) !important;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1919.8px ) {
+  .media-lg {
+    background: rgb(37, 189, 0) !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .media-xl {
+    background: rgb(37, 189, 0) !important;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1279.8px ) {
+  .media-sm-lg {
+    background: rgb(37, 189, 0) !important;
+  }
+}
+@media screen and (min-width: 2000px) and (max-width: 2199.8px ) {
+  .media-custom {
+    background: rgb(37, 189, 0) !important;
+  }
+}
+
+/*# sourceMappingURL=docs.css.map */

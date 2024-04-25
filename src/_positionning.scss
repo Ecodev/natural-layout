@@ -19,20 +19,20 @@
     flex-direction: row;
 }
 
-@mixin nat-wrap-center() {
-    &.nat-wrap {
-        flex-wrap: wrap;
-    }
 
-    &.nat-wrap-reverse {
-        flex-wrap: wrap-reverse;
-    }
-
-    &.nat-center {
-        align-items: center;
-        justify-content: center;
-    }
+.nat-wrap {
+    flex-wrap: wrap;
 }
+
+.nat-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.nat-center {
+    align-items: center;
+    justify-content: center;
+}
+
 
 @mixin nat-center() {
     display: grid;
@@ -123,6 +123,10 @@
     &.nat-distribute {
         justify-content: space-between;
     }
+
+    &.nat-baseline {
+        align-items: baseline;
+    }
 }
 
 .nat-horizontal {
@@ -147,11 +151,10 @@
     &.nat-distribute {
         justify-content: space-between;
     }
-}
 
-.nat-horizontal,
-.nat-vertical {
-    @include nat-wrap-center();
+    &.nat-baseline {
+        align-items: baseline;
+    }
 }
 
 .nat-gap {
@@ -163,7 +166,7 @@
 }
 
 @each $key, $value in variables.$breakpoints {
-    @include mixins.gte($key) {
+    @include mixins.media($key) {
         .nat-#{$key}-vertical {
             @include nat-vertical();
         }

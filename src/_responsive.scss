@@ -10,7 +10,7 @@
 }
 
 @each $key, $value in variables.$breakpoints {
-    @include mixins.gte($key) {
+    @include mixins.media($key) {
         .nat-#{$key}-show {
             display: block;
         }

@@ -1,0 +1,172 @@
+@use '../dist/scss/natural-layout.scss' as nat;
+
+html {
+    font-size: 16px;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+h1, h2, h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+pre {
+    padding: 20px;
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.comment {
+    color: rgba(0, 0, 0, 0.5)
+}
+
+pre,
+.test {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.test {
+    margin-bottom: 30px;
+
+    & > div {
+        background: #ff4141;
+        color: white;
+        border-radius: 4px;
+        font-size: 18px;
+    }
+
+    &:not(.docs-no-margin) div {
+        margin: 0 2px 2px 0;
+    }
+
+    &:not(.docs-no-padding) div {
+        padding: 6px 12px;
+    }
+}
+
+
+#current-breakpoint {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+
+    div {
+        color: white;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center
+    }
+}
+
+#inner-width {
+    background: rgb(63, 63, 63) !important;
+}
+
+
+.docs-xs {
+    color: white !important;
+    border: none !important;
+    background: rgb(255, 0, 0) !important;
+}
+
+.docs-sm {
+    color: white !important;
+    border: none !important;
+    background: rgb(37, 189, 0) !important;
+}
+
+.docs-md {
+    color: white !important;
+    border: none !important;
+    background: rgba(0, 142, 255) !important;
+}
+
+.docs-lg {
+    color: white !important;
+    border: none !important;
+    background: rgb(231, 164, 0) !important;
+}
+
+.docs-xl {
+    color: white !important;
+    border: none !important;
+    background: rgb(238, 0, 255) !important;
+}
+
+.docs-class {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 5px;
+    color: white;
+    background: rgb(0, 156, 224);
+    border-radius: 10px;
+    font-family: monospace;
+}
+
+a {
+    color: rgb(0, 156, 224);
+}
+
+a:hover {
+    color: red;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+@include nat.media(null, sm) {
+    .media-xs {
+        background: rgb(37, 189, 0) !important;
+    }
+}
+
+@include nat.media(sm, md) {
+    .media-sm {
+        background: rgb(37, 189, 0) !important;
+    }
+}
+
+@include nat.media(md, lg) {
+    .media-md {
+        background: rgb(37, 189, 0) !important;
+    }
+}
+
+@include nat.media(lg, xl) {
+    .media-lg {
+        background: rgb(37, 189, 0) !important;
+    }
+}
+
+@include nat.media(xl) {
+    .media-xl {
+        background: rgb(37, 189, 0) !important;
+    }
+}
+
+@include nat.media(sm, lg) {
+    .media-sm-lg {
+        background: rgb(37, 189, 0) !important;
+    }
+}
+
+@include nat.media(2000px, 2200px) {
+    .media-custom {
+        background: rgb(37, 189, 0) !important;
+    }
+}

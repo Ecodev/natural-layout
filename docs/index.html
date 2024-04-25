@@ -8,7 +8,18 @@
     </head>
     <body>
 
-        <div id="current-breakpoint">
+        <script type="module">
+            const element = document.getElementById('inner-width');
+            function update() {
+                element.innerText = window.visualViewport.width +' px';
+            }
+
+            window.onresize = update
+            update();
+        </script>
+
+        <div id="current-breakpoint" class="nat-vertical nat-right nat-gap-10">
+            <div id="inner-width"></div>
             <div class="docs-xs nat-sm-hide">XS</div>
             <div class="docs-sm nat-hide nat-sm-show nat-md-hide">SM</div>
             <div class="docs-md nat-hide nat-md-show nat-lg-hide">MD</div>
@@ -56,20 +67,33 @@ class="nat-gap  nat-md-gap-50" </pre>
 
         <h1>SCSS usage : media query</h1>
 
-        <pre>@use '@ecodev/natural-layout' as nat;</pre>
+        <pre>
+$breakpoints: (
+    sm: 600px,
+    md: 960px,
+    lg: 1280px,
+    xl: 1920px,
+)</pre>
 
         <pre class="media-scss-test">
-#id {
-    // apply max-width for sizes bigger than md (included)
-    @include nat.gte(md) {
-        max-width: 80%;
-    }
+@use '@ecodev/natural-layout' as nat;
 
-    // apply color red for sm and md sizes
-    @include nat.between(sm, lg) {
-        color: red;
-    }
+#id {
+    @include nat.media(sm) { ... } <span class="comment">// greater than SM</span>
+    @include nat.media(null, md) { ... } <span class="comment">// lesser than MD (excluded)</span>
+    @include nat.media(sm, lg) { ... } <span class="comment">// from SM (included) to LG (exluded)</span>
+    @include nat.media(1000px, 2000px) { ... } <span class="comment">// from 1000px to 2000px, accepts null values too</span>
 }</pre>
+
+        <div class="test nat-horizontal nat-wrap">
+            <div class="media-xs">XS</div>
+            <div class="media-sm">SM</div>
+            <div class="media-md">MD</div>
+            <div class="media-lg">LG</div>
+            <div class="media-xl">XL</div>
+            <div class="media-sm-lg">SM to LG</div>
+            <div class="media-custom">2000px to 2200</div>
+        </div>
 
         <h1>Unresponsive html markup</h1>
 
@@ -114,7 +138,9 @@ class="nat-gap  nat-md-gap-50" </pre>
             <div>xxx</div>
         </div>
 
-        <h2 id="section-center">Center</h2>
+        <h2 id="section-center">nat-center</h2>
+        <p><strong>nat-center</strong> is magic. If used alone it centers both axis. If used with another axis, centers on the complementary axis.</p>
+
         <p>Horizontal center</p>
         <span class="docs-class">nat-horizontal nat-center</span>
         <div class="test nat-horizontal nat-center" style="height:100px;">
@@ -142,6 +168,54 @@ class="nat-gap  nat-md-gap-50" </pre>
         <div class="test nat-center" style="height:150px;">
             <div>xxx</div>
             <div>xxxxxxx
+                <br/>
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <p>Horizontal top centered</p>
+        <span class="docs-class">nat-horizontal nat-center nat-top</span>
+        <div class="test nat-horizontal nat-center nat-top" style="height:100px;">
+            <div>xxx</div>
+            <div>
+                xxxxxxx
+                <br/>
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <p>Horizontal right centered</p>
+        <span class="docs-class">nat-horizontal nat-center nat-right</span>
+        <div class="test nat-horizontal nat-center nat-right" style="height:100px;">
+            <div>xxx</div>
+            <div>
+                xxxxxxx
+                <br/>
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <p>Vertical top centered</p>
+        <span class="docs-class">nat-vertical nat-center nat-top</span>
+        <div class="test nat-vertical nat-center nat-top" style="height:200px;">
+            <div>xxx</div>
+            <div>
+                xxxxxxx
+                <br/>
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <p>Vertical right centered</p>
+        <span class="docs-class">nat-vertical nat-center nat-right</span>
+        <div class="test nat-vertical nat-center nat-right" style="height:200px;">
+            <div>xxx</div>
+            <div>
+                xxxxxxx
                 <br/>
                 xxxxxxx
             </div>

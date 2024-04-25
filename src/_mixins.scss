@@ -1,16 +1,42 @@
 @use 'variables';
+@use 'sass:meta';
 
-@mixin gte($key) {
-    $start: map-get(variables.$breakpoints, $key);
-    @media screen and (min-width: #{$start}) {
-        @content;
+@function map-get-strict($map, $key) {
+    @if map-has-key($map, $key) {
+        @return map-get($map, $key);
+    } @else {
+        @error "Specified key '#{$key}' does not exist in the map";
     }
 }
 
-@mixin between($low, $high) {
-    $low: map-get(variables.$breakpoints, $low);
-    $high: map-get(variables.$breakpoints, $high);
-    @media screen and (min-width: #{$low}) and (max-width: #{$high - 0.02}) {
+// Return breakpoint value if exists or given number
+@function get-size($value) {
+    $type: type-of($value);
+
+    @if ($type == number) {
+        @return $value;
+    } @else if ($type == string) {
+        @return map-get-strict(variables.$breakpoints, $value);
+    }
+
+    @error "Specified value '#{$value}' must be number or valid breakpoint key";
+}
+
+/**
+Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
+ */
+@mixin media($start: null, $end: null) {
+
+    $query: "";
+    @if $start != null {
+        $query: $query + " and (min-width: #{get-size($start)})";
+    }
+
+    @if $end != null {
+        $query: $query + " and (max-width: #{get-size($end) - 0.2} )";
+    }
+
+    @media screen #{$query} {
         @content;
     }
 }
