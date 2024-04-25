@@ -1,3 +1,6 @@
+/**
+Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
+ */
 .nat-show {
   display: block;
 }
