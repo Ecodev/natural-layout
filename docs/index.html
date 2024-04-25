@@ -71,6 +71,24 @@ class="nat-gap  nat-md-gap-50" </pre>
     }
 }</pre>
 
+        <div>window.innerWidth: <span id="innerWidth"></span></div>
+        <script type="module">
+            const element = document.getElementById('innerWidth');
+            function update() {
+                element.innerText = window.visualViewport.width;
+            }
+
+            window.onresize = update
+            update();
+        </script>
+
+        <div class="test nat-horizontal">
+            <div class="between-xs-sm">xs-sm</div>
+            <div class="between-sm-md">sm-md</div>
+            <div class="between-md-lg">md-lg</div>
+            <div class="between-lg-xl">lg-xl</div>
+        </div>
+
         <h1>Unresponsive html markup</h1>
 
         <h2 id="section-padding">nat-padding</h2>

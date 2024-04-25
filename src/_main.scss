@@ -7,3 +7,28 @@
 html {
     --natural-default-spacing: 20px;
 }
+
+// TODO uncomment this and make it work (and move all .between* inside the doc, probably)
+//.between-xs-sm {
+//    @include mixins.between(xs, sm) {
+//        background-color: green;
+//    }
+//}
+
+.between-sm-md {
+    @include mixins.between(sm, md) {
+        background-color: green !important;
+    }
+}
+
+.between-md-lg {
+    @include mixins.between(md, lg) {
+        background-color: green !important;
+    }
+}
+
+.between-lg-xl {
+    @include mixins.between(lg, xl) {
+        background-color: green !important;
+    }
+}
