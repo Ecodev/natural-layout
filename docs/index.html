@@ -11,7 +11,7 @@
         <script type="module">
             const element = document.getElementById('inner-width');
             function update() {
-                element.innerText = window.visualViewport.width +' px';
+                element.innerText = window.visualViewport.width.toFixed(3) +' px';
             }
 
             window.onresize = update
