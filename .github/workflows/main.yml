@@ -13,3 +13,13 @@ jobs:
                   cache: 'yarn'
             - run: yarn --frozen-lockfile
             - run: yarn build
+
+    prettier:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  cache: 'yarn'
+            - run: yarn --frozen-lockfile
+            - run: ./node_modules/.bin/prettier --check .

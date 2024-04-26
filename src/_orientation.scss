@@ -32,7 +32,6 @@
     justify-content: center;
 }
 
-
 @mixin nat-center() {
     display: grid;
     place-content: center center;
@@ -74,7 +73,6 @@
     }
 }
 
-
 @mixin nat-expand() {
     flex: 1;
 
@@ -98,7 +96,6 @@
         flex: 66;
     }
 }
-
 
 .nat-vertical {
     @include nat-vertical();
