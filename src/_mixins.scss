@@ -26,14 +26,13 @@
 Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
  */
 @mixin media($start: null, $end: null) {
-
-    $query: "";
+    $query: '';
     @if $start != null {
-        $query: $query + " and (min-width: #{get-size($start)})";
+        $query: $query + ' and (min-width: #{get-size($start)})';
     }
 
     @if $end != null {
-        $query: $query + " and (max-width: #{get-size($end) - 0.2} )";
+        $query: $query + ' and (max-width: #{get-size($end) - 0.2} )';
     }
 
     @media screen #{$query} {

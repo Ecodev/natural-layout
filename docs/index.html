@@ -1,20 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
         <title>@ecodev/natural-layout</title>
-        <link rel="stylesheet" href="natural-layout.css">
-        <link rel="stylesheet" href="docs.css">
+        <link rel="stylesheet" href="natural-layout.css" />
+        <link rel="stylesheet" href="docs.css" />
     </head>
     <body>
-
         <script type="module">
             const element = document.getElementById('inner-width');
             function update() {
-                element.innerText = window.visualViewport.width.toFixed(3) +' px';
+                element.innerText = window.visualViewport.width.toFixed(3) + ' px';
             }
 
-            window.onresize = update
+            window.onresize = update;
             update();
         </script>
 
@@ -34,7 +33,7 @@
             <li><a href="#section-start">Start</a></li>
             <li><a href="#section-scss">SCSS media query usage</a></li>
             <li>
-            <li><strong>Unresponsive classes</strong>
+                <strong>Unresponsive classes</strong>
                 <ul>
                     <li><a href="#section-padding">Padding</a></li>
                     <li><a href="#section-margin">Margin</a></li>
@@ -42,7 +41,8 @@
                     <li><a href="#section-center">Center</a></li>
                 </ul>
             </li>
-            <li><strong>Responsive classes</strong>
+            <li>
+                <strong>Responsive classes</strong>
                 <ul>
                     <li><a href="#section-hide">Show/Hide</a></li>
                     <li><a href="#section-gap">Gap</a></li>
@@ -61,13 +61,10 @@
 
         <strong>Examples : </strong>
         <p>Greater than medium (included) change layout to horizontal</p>
-        <pre>
-class="nat-vertical  nat-md-horizontal" </pre>
+        <pre>class="nat-vertical  nat-md-horizontal" </pre>
 
         <p>Greater than medium (included) increase gap</p>
-        <pre>
-class="nat-gap  nat-md-gap-50" </pre>
-
+        <pre>class="nat-gap  nat-md-gap-50" </pre>
 
         <h1 id="section-scss">SCSS usage : media query</h1>
 
@@ -77,7 +74,8 @@ $breakpoints: (
     md: 960px,
     lg: 1280px,
     xl: 1920px,
-)</pre>
+)</pre
+        >
 
         <pre class="media-scss-test">
 @use '@ecodev/natural-layout' as nat;
@@ -102,13 +100,12 @@ $breakpoints: (
         <h1>Unresponsive html markup</h1>
 
         <h2 id="section-padding">nat-padding</h2>
-        <p>Padding on all sides / top and down / left and right : </p>
+        <p>Padding on all sides / top and down / left and right :</p>
         <div class="test docs-no-padding">
             <div class="nat-padding">nat-padding</div>
             <div class="nat-padding-vertical">nat-padding-vertical</div>
             <div class="nat-padding-horizontal">nat-padding-horizontal</div>
         </div>
-
 
         <h2 id="section-margin">nat-margin</h2>
         <p>Margin on all sides / top and bottom / left and right :</p>
@@ -122,10 +119,11 @@ $breakpoints: (
         <p>Alignments <strong>nat-bottom, nat-top, nat-left, nat-right</strong> can be combined.</p>
         <p>Align bottom right</p>
         <span class="docs-class">nat-horizontal nat-bottom nat-right</span>
-        <div class="test nat-horizontal nat-bottom nat-right" style="height:100px">
+        <div class="test nat-horizontal nat-bottom nat-right" style="height: 100px">
             <div>xxx</div>
-            <div>xxx
-                <br/>
+            <div>
+                xxx
+                <br />
                 xxx
             </div>
             <div>xxx</div>
@@ -133,24 +131,29 @@ $breakpoints: (
 
         <p>Distribute uses space-around</p>
         <span class="docs-class">nat-distribute</span>
-        <div class="test nat-horizontal nat-distribute" style="height:100px;">
+        <div class="test nat-horizontal nat-distribute" style="height: 100px">
             <div>xxx</div>
-            <div>xxxxxxx
-                <br/>
+            <div>
+                xxxxxxx
+                <br />
                 xxxxxxx
             </div>
             <div>xxx</div>
         </div>
 
         <h2 id="section-center">nat-center</h2>
-        <p><strong>nat-center</strong> is magic. If used alone it centers both axis. If used with another axis, centers on the complementary axis.</p>
+        <p>
+            <strong>nat-center</strong> is magic. If used alone it centers both axis. If used with another axis, centers
+            on the complementary axis.
+        </p>
 
         <p>Horizontal center</p>
         <span class="docs-class">nat-horizontal nat-center</span>
-        <div class="test nat-horizontal nat-center" style="height:100px;">
+        <div class="test nat-horizontal nat-center" style="height: 100px">
             <div>xxx</div>
-            <div>xxxxxxx
-                <br/>
+            <div>
+                xxxxxxx
+                <br />
                 xxxxxxx
             </div>
             <div>xxx</div>
@@ -158,10 +161,11 @@ $breakpoints: (
 
         <p>Vertical center</p>
         <span class="docs-class">nat-vertical nat-center</span>
-        <div class="test nat-vertical nat-center" style="height:150px;">
+        <div class="test nat-vertical nat-center" style="height: 150px">
             <div>xxx</div>
-            <div>xxxxxxx
-                <br/>
+            <div>
+                xxxxxxx
+                <br />
                 xxxxxxx
             </div>
             <div>xxx</div>
@@ -169,10 +173,11 @@ $breakpoints: (
 
         <p>Grid center :</p>
         <span class="docs-class">nat-center</span>
-        <div class="test nat-center" style="height:150px;">
+        <div class="test nat-center" style="height: 150px">
             <div>xxx</div>
-            <div>xxxxxxx
-                <br/>
+            <div>
+                xxxxxxx
+                <br />
                 xxxxxxx
             </div>
             <div>xxx</div>
@@ -180,11 +185,11 @@ $breakpoints: (
 
         <p>Horizontal top centered</p>
         <span class="docs-class">nat-horizontal nat-center nat-top</span>
-        <div class="test nat-horizontal nat-center nat-top" style="height:100px;">
+        <div class="test nat-horizontal nat-center nat-top" style="height: 100px">
             <div>xxx</div>
             <div>
                 xxxxxxx
-                <br/>
+                <br />
                 xxxxxxx
             </div>
             <div>xxx</div>
@@ -192,11 +197,11 @@ $breakpoints: (
 
         <p>Horizontal right centered</p>
         <span class="docs-class">nat-horizontal nat-center nat-right</span>
-        <div class="test nat-horizontal nat-center nat-right" style="height:100px;">
+        <div class="test nat-horizontal nat-center nat-right" style="height: 100px">
             <div>xxx</div>
             <div>
                 xxxxxxx
-                <br/>
+                <br />
                 xxxxxxx
             </div>
             <div>xxx</div>
@@ -204,11 +209,11 @@ $breakpoints: (
 
         <p>Vertical top centered</p>
         <span class="docs-class">nat-vertical nat-center nat-top</span>
-        <div class="test nat-vertical nat-center nat-top" style="height:200px;">
+        <div class="test nat-vertical nat-center nat-top" style="height: 200px">
             <div>xxx</div>
             <div>
                 xxxxxxx
-                <br/>
+                <br />
                 xxxxxxx
             </div>
             <div>xxx</div>
@@ -216,16 +221,15 @@ $breakpoints: (
 
         <p>Vertical right centered</p>
         <span class="docs-class">nat-vertical nat-center nat-right</span>
-        <div class="test nat-vertical nat-center nat-right" style="height:200px;">
+        <div class="test nat-vertical nat-center nat-right" style="height: 200px">
             <div>xxx</div>
             <div>
                 xxxxxxx
-                <br/>
+                <br />
                 xxxxxxx
             </div>
             <div>xxx</div>
         </div>
-
 
         <h1>Responsive HTML markup</h1>
         <h2 id="section-hide">nat-hide</h2>
@@ -274,7 +278,7 @@ $breakpoints: (
         <p>Must be combined with nat-horizontal or nat-vertical.</p>
         <p>Sizes : <strong>1, 5, 10, 15, 20, 30, 50</strong></p>
         <p>Example where gap increases with screen size :</p>
-        <span class="docs-class">nat-gap-1  nat-gap-1  nat-sm-gap-20  nat-md-gap-50</span>
+        <span class="docs-class">nat-gap-1 nat-gap-1 nat-sm-gap-20 nat-md-gap-50</span>
         <div class="test nat-horizontal nat-gap-1 nat-sm-gap-20 nat-md-gap-50">
             <div>xxx</div>
             <div>xxx</div>
@@ -320,7 +324,7 @@ $breakpoints: (
 
         <p>Align bottom right</p>
         <span class="docs-class">nat-vertical nat-bottom nat-right</span>
-        <div class="test nat-vertical nat-bottom nat-right" style="height:200px">
+        <div class="test nat-vertical nat-bottom nat-right" style="height: 200px">
             <div>xxx</div>
             <div>xxx</div>
             <div>xxx</div>
@@ -342,11 +346,10 @@ $breakpoints: (
             <div>xxx</div>
         </div>
 
-        <p>Proportions change when greater than medium (included) : </p>
+        <p>Proportions change when greater than medium (included) :</p>
         <div class="test nat-horizontal nat-gap">
             <div class="nat-expand-33 nat-md-expand-66">nat-expand-33 nat-md-expand-66</div>
             <div class="nat-expand-66 nat-md-expand-33">nat-expand-66 nat-md-expand-33</div>
         </div>
-
     </body>
 </html>
