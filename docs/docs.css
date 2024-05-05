@@ -6,7 +6,9 @@ html {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
@@ -34,12 +36,14 @@ pre,
 
 .test {
   margin-bottom: 30px;
+  width: 1000px;
 }
 .test > div {
   background: #ff4141;
   color: white;
   border-radius: 4px;
   font-size: 18px;
+  font-family: Monospaced, sans-serif;
 }
 .test:not(.docs-no-margin) div {
   margin: 0 2px 2px 0;
@@ -114,7 +118,8 @@ a:hover {
   color: red;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;

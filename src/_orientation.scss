@@ -1,5 +1,4 @@
 @use 'variables';
-@use 'responsive';
 @use 'mixins';
 
 .nat-fill {
@@ -7,16 +6,6 @@
     min-height: 100%;
     min-width: 100%;
     width: 100%;
-}
-
-@mixin nat-vertical() {
-    display: flex;
-    flex-direction: column;
-}
-
-@mixin nat-horizontal() {
-    display: flex;
-    flex-direction: row;
 }
 
 .nat-wrap {
@@ -32,143 +21,191 @@
     justify-content: center;
 }
 
-@mixin nat-center() {
-    display: grid;
-    place-content: center center;
-}
-
-:not(.nat-horizontal):not(.nat-vertical).nat-center {
-    @include nat-center();
+:not(.nat-horizontal):not(.nat-vertical):not(.nat-sm-horizontal):not(.nat-sm-vertical):not(.nat-md-horizontal):not(
+        .nat-md-vertical
+    ):not(.nat-lg-horizontal):not(.nat-lg-vertical):not(.nat-xl-horizontal):not(.nat-xl-vertical) {
+    &.nat-center {
+        display: grid;
+        place-content: center center;
+    }
 }
 
 @mixin nat-gap() {
     gap: var(--natural-default-spacing);
 
-    &-1 {
-        gap: 1px;
+    &-horizontal {
+        column-gap: var(--natural-default-spacing);
+    }
+    &-vertical {
+        row-gap: var(--natural-default-spacing);
     }
 
-    &-5 {
-        gap: 5px;
-    }
-
-    &-10 {
-        gap: 10px;
-    }
-
-    &-15 {
-        gap: 15px;
-    }
-
-    &-20 {
-        gap: 20px;
-    }
-
-    &-30 {
-        gap: 30px;
-    }
-
-    &-50 {
-        gap: 50px;
+    $gapsPx: 0, 1, 5, 10, 15, 20, 30;
+    @each $gap in $gapsPx {
+        &-#{$gap} {
+            gap: #{$gap}px;
+        }
+        &-horizontal-#{$gap} {
+            column-gap: #{$gap}px;
+        }
+        &-vertical-#{$gap} {
+            row-gap: #{$gap}px;
+        }
     }
 }
 
-@mixin nat-expand() {
-    flex: 1;
+@mixin nat-expand($orientation) {
+    flex: 1 1 1e-9px;
 
     &-20 {
-        flex: 20;
+        max-#{$orientation}: 20%;
     }
 
     &-25 {
-        flex: 25;
+        max-#{$orientation}: 25%;
     }
 
     &-33 {
-        flex: 33;
+        max-#{$orientation}: 33%;
     }
 
     &-50 {
-        flex: 50;
+        max-#{$orientation}: 50%;
     }
 
     &-66 {
-        flex: 66;
+        max-#{$orientation}: 66%;
+    }
+
+    &-75 {
+        max-#{$orientation}: 75%;
+    }
+
+    &-80 {
+        max-#{$orientation}: 80%;
+    }
+}
+
+@mixin nat-vertical($size) {
+    display: flex;
+    flex-direction: column;
+
+    &.nat-top {
+        justify-content: flex-start;
+    }
+
+    &.nat-bottom {
+        justify-content: flex-end;
+    }
+
+    &.nat-left {
+        align-items: flex-start;
+    }
+
+    &.nat-right {
+        align-items: flex-end;
+    }
+
+    &.nat-distribute {
+        justify-content: space-between;
+    }
+
+    @if ($size) {
+        & > .nat#{$size}-expand {
+            @include nat-expand('height');
+        }
+    } @else {
+        & > .nat-expand {
+            @include nat-expand('height');
+        }
     }
 }
 
 .nat-vertical {
-    @include nat-vertical();
+    @include nat-vertical(null);
+}
+
+@mixin nat-horizontal($size) {
+    display: flex;
+    flex-direction: row;
 
     &.nat-top {
-        justify-content: flex-start;
-    }
-
-    &.nat-bottom {
-        justify-content: flex-end;
-    }
-
-    &.nat-left {
         align-items: flex-start;
     }
 
-    &.nat-right {
+    &.nat-bottom {
         align-items: flex-end;
+    }
+
+    &.nat-left {
+        justify-content: flex-start;
+    }
+
+    &.nat-right {
+        justify-content: flex-end;
     }
 
     &.nat-distribute {
         justify-content: space-between;
     }
 
-    &.nat-baseline {
-        align-items: baseline;
+    @if ($size) {
+        & > .nat#{$size}-expand {
+            @include nat-expand('width');
+        }
+    } @else {
+        & > .nat-expand {
+            @include nat-expand('width');
+        }
     }
 }
 
 .nat-horizontal {
-    @include nat-horizontal();
-
-    &.nat-top {
-        align-items: flex-start;
-    }
-
-    &.nat-bottom {
-        align-items: flex-end;
-    }
-
-    &.nat-left {
-        justify-content: flex-start;
-    }
-
-    &.nat-right {
-        justify-content: flex-end;
-    }
-
-    &.nat-distribute {
-        justify-content: space-between;
-    }
-
-    &.nat-baseline {
-        align-items: baseline;
-    }
+    @include nat-horizontal(null);
 }
 
 .nat-gap {
     @include nat-gap();
 }
 
+/**
+All nat-expand and nat-xx-expand is border box
+ */
+[class*='-expand'] {
+    box-sizing: border-box;
+}
+
+/**
+All no 100% nat-expand-xx and nat-xx-expand-yy
+ */
+[class*='expand-'] {
+    flex: 1 1 100%;
+}
+
 .nat-expand {
-    @include nat-expand();
+    flex: 1 1 1e-9px;
+}
+
+.nat-expand-no-collapse {
+    flex: 1 0 auto;
+}
+
+.nat-no-collapse {
+    flex-shrink: 0;
+}
+
+.nat-no-expand {
+    flex-grow: 0;
 }
 
 @each $key, $value in variables.$breakpoints {
     @include mixins.media($key) {
         .nat-#{$key}-vertical {
-            @include nat-vertical();
+            @include nat-vertical('-#{$key}');
         }
 
         .nat-#{$key}-horizontal {
-            @include nat-horizontal();
+            @include nat-horizontal('-#{$key}');
         }
 
         .nat-#{$key}-gap {
@@ -176,7 +213,7 @@
         }
 
         .nat-#{$key}-expand {
-            @include nat-expand();
+            flex: 1 1 1e-9px;
         }
     }
 }

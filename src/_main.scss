@@ -1,8 +1,7 @@
 @use 'variables';
-@use 'responsive';
-@use 'gaps';
+@use 'margin-padding';
 @use 'orientation';
-@use 'mixins';
+@use 'visibility';
 
 html {
     --natural-default-spacing: 20px;

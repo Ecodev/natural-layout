@@ -35,12 +35,14 @@ pre,
 
 .test {
     margin-bottom: 30px;
+    width: 1000px;
 
     & > div {
         background: #ff4141;
         color: white;
         border-radius: 4px;
         font-size: 18px;
+        font-family: Monospaced, sans-serif;
     }
 
     &:not(.docs-no-margin) div {

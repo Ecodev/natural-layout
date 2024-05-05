@@ -9,6 +9,7 @@
     <body>
         <script type="module">
             const element = document.getElementById('inner-width');
+
             function update() {
                 element.innerText = window.visualViewport.width.toFixed(3) + ' px';
             }
@@ -28,6 +29,8 @@
 
         <h1>@ecodev/natural-layout</h1>
         <p><a href="https://github.com/Ecodev/natural-layout">View on github</a></p>
+
+        <div class="nat-md-show">asfadsf</div>
 
         <ul>
             <li><a href="#section-start">Start</a></li>
@@ -276,15 +279,39 @@ $breakpoints: (
 
         <h2 id="section-gap">nat-gap</h2>
         <p>Must be combined with nat-horizontal or nat-vertical.</p>
-        <p>Sizes : <strong>1, 5, 10, 15, 20, 30, 50</strong></p>
+        <p>Sizes : <strong>0, 1, 5, 10, 15, 20, 30</strong></p>
         <p>Example where gap increases with screen size :</p>
-        <span class="docs-class">nat-gap-1 nat-gap-1 nat-sm-gap-20 nat-md-gap-50</span>
-        <div class="test nat-horizontal nat-gap-1 nat-sm-gap-20 nat-md-gap-50">
+        <span class="docs-class">nat-gap-1 nat-gap-1 nat-sm-gap-10 nat-md-gap-40</span>
+        <div class="test nat-horizontal nat-gap-1 nat-sm-gap-10 nat-md-gap-40">
             <div>xxx</div>
             <div>xxx</div>
             <div>xxx</div>
             <div>xxx</div>
             <div>xxx</div>
+        </div>
+
+        <p>Orientation specific and responsive gap :</p>
+        <p>
+            Different responsive gap in specific orientation (small screen = bigger vertical gap, big screen = bigger
+            horizontal gap). Usefull for form fields layouts.
+        </p>
+        <span class="docs-class">
+            nat-gap-vertical-30 nat-gap-horizontal-5 nat-md-gap-horizontal-30 nat-md-gap-vertical-1
+        </span>
+        <div>
+            <div
+                class="test docs-no-margin nat-horizontal nat-wrap nat-gap-vertical-30 nat-gap-horizontal-5 nat-md-gap-horizontal-30 nat-md-gap-vertical-1"
+                style="width: 200px"
+            >
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+                <div>xxx</div>
+            </div>
         </div>
 
         <h2 id="section-horizontal">nat-horizontal</h2>
@@ -347,9 +374,25 @@ $breakpoints: (
         </div>
 
         <p>Proportions change when greater than medium (included) :</p>
-        <div class="test nat-horizontal nat-gap">
+        <div class="test nat-horizontal docs-no-margin nat-gap-30">
             <div class="nat-expand-33 nat-md-expand-66">nat-expand-33 nat-md-expand-66</div>
             <div class="nat-expand-66 nat-md-expand-33">nat-expand-66 nat-md-expand-33</div>
+        </div>
+
+        <div class="test nat-horizontal docs-no-margin nat-gap-30">
+            <div class="nat-expand-66">nat-expand-66</div>
+        </div>
+
+        <div class="test nat-horizontal docs-no-margin nat-gap-30">
+            <div class="nat-expand">nat-expand</div>
+            <div class="nat-expand-66">nat-expand-66</div>
+        </div>
+        <div class="test nat-horizontal docs-no-margin nat-gap-30">
+            <div class="nat-expand-33">nat-expand-33</div>
+            <div class="nat-expand">nat-expand</div>
+        </div>
+        <div class="test nat-horizontal docs-no-margin nat-gap-30">
+            <div class="nat-expand-33">nat-expand-33</div>
         </div>
     </body>
 </html>
