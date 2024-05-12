@@ -1,42 +1,41 @@
 @use 'variables';
 @use 'mixins';
 
-@mixin hide() {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    pointer-events: none;
-    left: -9999999vw;
-}
-
-@mixin show() {
-    position: static;
-    clip: auto;
-    pointer-events: auto;
-    left: auto;
-}
-
-.nat-show {
-    @include show();
-}
-
+/**
+ Use only when there is not another visibility class (nat-xx-show)
+ */
 .nat-hide {
-    @include hide();
-}
-
-@include mixins.media(null, sm) {
-    .nat-hide-xs-only {
-        display: none !important;
-    }
+    display: none !important;
 }
 
 @each $key, $value in variables.$breakpoints {
     @include mixins.media($key) {
-        .nat-#{$key}-show {
-            @include show();
-        }
-
         .nat-#{$key}-hide {
-            @include hide();
+            display: none !important;
         }
+    }
+
+    @include mixins.media(null, $key) {
+        .nat-#{$key}-show {
+            display: none !important;
+        }
+    }
+}
+
+@include mixins.media(sm, md) {
+    .nat-sm-only-hide {
+        display: none;
+    }
+}
+
+@include mixins.media(md, lg) {
+    .nat-md-only-hide {
+        display: none;
+    }
+}
+
+@include mixins.media(lg, xl) {
+    .nat-lg-only-hide {
+        display: none;
     }
 }

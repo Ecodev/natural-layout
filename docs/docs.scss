@@ -14,6 +14,7 @@ h3 {
 
 pre {
     padding: 20px;
+    overflow-y: auto;
 }
 
 p {
@@ -35,7 +36,7 @@ pre,
 
 .test {
     margin-bottom: 30px;
-    width: 1000px;
+    box-sizing: border-box;
 
     & > div {
         background: #ff4141;
@@ -171,5 +172,16 @@ ul {
 @include nat.media(2000px, 2200px) {
     .media-custom {
         background: rgb(37, 189, 0) !important;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+
+    div {
+        background: rgb(167, 0, 255);
+        padding: 5px;
     }
 }

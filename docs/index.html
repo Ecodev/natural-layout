@@ -21,10 +21,10 @@
         <div id="current-breakpoint" class="nat-vertical nat-right nat-gap-10">
             <div id="inner-width"></div>
             <div class="docs-xs nat-sm-hide">XS</div>
-            <div class="docs-sm nat-hide nat-sm-show nat-md-hide">SM</div>
-            <div class="docs-md nat-hide nat-md-show nat-lg-hide">MD</div>
-            <div class="docs-lg nat-hide nat-lg-show nat-xl-hide">LG</div>
-            <div class="docs-xl nat-hide nat-xl-show nat-hide">XL</div>
+            <div class="docs-sm nat-sm-show nat-md-hide">SM</div>
+            <div class="docs-md nat-md-show nat-lg-hide">MD</div>
+            <div class="docs-lg nat-lg-show nat-xl-hide">LG</div>
+            <div class="docs-xl nat-xl-show">XL</div>
         </div>
 
         <h1>@ecodev/natural-layout</h1>
@@ -84,10 +84,17 @@ $breakpoints: (
 @use '@ecodev/natural-layout' as nat;
 
 #id {
-    @include nat.media(sm) { ... } <span class="comment">// greater than SM</span>
-    @include nat.media(null, md) { ... } <span class="comment">// lesser than MD (excluded)</span>
-    @include nat.media(sm, lg) { ... } <span class="comment">// from SM (included) to LG (exluded)</span>
-    @include nat.media(1000px, 2000px) { ... } <span class="comment">// from 1000px to 2000px, accepts null values too</span>
+    <span class="comment">// greater than SM</span>
+    @include nat.media(sm) { ... }
+
+    <span class="comment">// lesser than MD (excluded)</span>
+    @include nat.media(null, md) { ... }
+
+    <span class="comment">// from SM (included) to LG (exluded)</span>
+    @include nat.media(sm, lg) { ... }
+
+    <span class="comment">// from 1000px to 2000px, accepts null values too</span>
+    @include nat.media(1000px, 2000px) { ... }
 }</pre>
 
         <div class="test nat-horizontal nat-wrap">
@@ -174,18 +181,6 @@ $breakpoints: (
             <div>xxx</div>
         </div>
 
-        <p>Grid center :</p>
-        <span class="docs-class">nat-center</span>
-        <div class="test nat-center" style="height: 150px">
-            <div>xxx</div>
-            <div>
-                xxxxxxx
-                <br />
-                xxxxxxx
-            </div>
-            <div>xxx</div>
-        </div>
-
         <p>Horizontal top centered</p>
         <span class="docs-class">nat-horizontal nat-center nat-top</span>
         <div class="test nat-horizontal nat-center nat-top" style="height: 100px">
@@ -240,41 +235,46 @@ $breakpoints: (
 
         <p>Breakpoints are only the start of size. To focus a single size, combine multiple classes</p>
 
-        <p>Show only current size</p>
-        <div class="test">
-            <div class="docs-xs nat-sm-hide">XS only</div>
-            <div class="docs-sm nat-hide nat-sm-show nat-md-hide">SM only</div>
-            <div class="docs-md nat-hide nat-md-show nat-lg-hide">MD only</div>
-            <div class="docs-lg nat-hide nat-lg-show nat-xl-hide">LG only</div>
-            <div class="docs-xl nat-hide nat-xl-show nat-hide">XL only</div>
+        <br />
+
+        <p><strong>Show badges that match the current breakpoint range</strong></p>
+        <p>Hide badges that don't match the current breakpoint range</p>
+        <div class="nat-horizontal nat-gap">
+            <div class="test nat-expand">
+                <div class="docs-xs nat-sm-hide">XS only</div>
+                <div class="docs-sm nat-sm-show nat-md-hide">SM only</div>
+                <div class="docs-md nat-md-show nat-lg-hide">MD only</div>
+                <div class="docs-lg nat-lg-show nat-xl-hide">LG only</div>
+                <div class="docs-xl nat-xl-show">XL only</div>
+            </div>
+
+            <div class="test nat-expand">
+                <div class="docs-xs nat-sm-show">XS</div>
+                <div class="docs-sm nat-sm-only-hide">SM</div>
+                <div class="docs-md nat-md-only-hide">MD</div>
+                <div class="docs-lg nat-lg-only-hide">LG</div>
+                <div class="docs-xl nat-xl-hide">XL</div>
+            </div>
         </div>
 
-        <p>Show from current size and more</p>
-        Example for medium : <span class="docs-class">nat-hide nat-md-show</span>
-        <div class="test">
-            <div class="docs-xs">XS (no need class, mobile first)</div>
-            <div class="docs-sm nat-hide nat-sm-show">SM</div>
-            <div class="docs-md nat-hide nat-md-show">MD</div>
-            <div class="docs-lg nat-hide nat-lg-show">LG</div>
-            <div class="docs-xl nat-hide nat-xl-show">XL</div>
-        </div>
+        <p><strong>Show badges fitting in the current breakpoint range (show smaller ones).</strong></p>
+        <p>Hide badges that don't fit in the current breakpoint range.</p>
 
-        <p>Hide only in current size</p>
-        Example for medium : <span class="docs-class">nat-show nat-md-hide nat-lg-show</span>
-        <div class="test">
-            <div class="docs-xs nat-hide nat-sm-show">XS</div>
-            <div class="docs-sm nat-show nat-sm-hide nat-md-show">SM</div>
-            <div class="docs-md nat-show nat-md-hide nat-lg-show">MD</div>
-            <div class="docs-lg nat-show nat-lg-hide nat-xl-show">LG</div>
-            <div class="docs-xl nat-show nat-xl-hide">XL</div>
-        </div>
+        <div class="nat-horizontal nat-gap">
+            <div class="test nat-expand">
+                <div class="docs-xs">XS</div>
+                <div class="docs-sm nat-sm-show">SM</div>
+                <div class="docs-md nat-md-show">MD</div>
+                <div class="docs-lg nat-lg-show">LG</div>
+                <div class="docs-xl nat-xl-show">XL</div>
+            </div>
 
-        <p>Hide from current size and more</p>
-        <div class="test">
-            <div class="docs-sm nat-sm-hide">&lt;= SM</div>
-            <div class="docs-md nat-md-hide">&lt;= MD</div>
-            <div class="docs-lg nat-lg-hide">&lt;= LG</div>
-            <div class="docs-xl nat-xl-hide">&lt;= XL</div>
+            <div class="test nat-expand">
+                <div class="docs-sm nat-sm-hide">SM</div>
+                <div class="docs-md nat-md-hide">MD</div>
+                <div class="docs-lg nat-lg-hide">LG</div>
+                <div class="docs-xl nat-xl-hide">XL</div>
+            </div>
         </div>
 
         <h2 id="section-gap">nat-gap</h2>
@@ -312,6 +312,16 @@ $breakpoints: (
                 <div>xxx</div>
                 <div>xxx</div>
             </div>
+        </div>
+
+        <p>Gap takes priority on margin in same axis to prevent addition.</p>
+        <div class="test nat-vertical nat-gap-15">
+            <div class="nat-margin-bottom">nat-margin-bottom</div>
+            <div class="nat-margin-bottom">nat-margin-bottom</div>
+        </div>
+        <div class="test nat-horizontal nat-gap">
+            <div class="nat-margin-right">nat-margin-bottom</div>
+            <div class="nat-margin-right">nat-margin-bottom</div>
         </div>
 
         <h2 id="section-horizontal">nat-horizontal</h2>

@@ -21,15 +21,6 @@
     justify-content: center;
 }
 
-:not(.nat-horizontal):not(.nat-vertical):not(.nat-sm-horizontal):not(.nat-sm-vertical):not(.nat-md-horizontal):not(
-        .nat-md-vertical
-    ):not(.nat-lg-horizontal):not(.nat-lg-vertical):not(.nat-xl-horizontal):not(.nat-xl-vertical) {
-    &.nat-center {
-        display: grid;
-        place-content: center center;
-    }
-}
-
 @mixin nat-gap() {
     gap: var(--natural-default-spacing);
 
@@ -40,7 +31,7 @@
         row-gap: var(--natural-default-spacing);
     }
 
-    $gapsPx: 0, 1, 5, 10, 15, 20, 30;
+    $gapsPx: 0, 5, 10, 15, 20, 30;
     @each $gap in $gapsPx {
         &-#{$gap} {
             gap: #{$gap}px;
@@ -80,88 +71,95 @@
     &-75 {
         max-#{$orientation}: 75%;
     }
-
-    &-80 {
-        max-#{$orientation}: 80%;
-    }
 }
 
 @mixin nat-vertical($size) {
     display: flex;
     flex-direction: column;
 
-    &.nat-top {
+    &.nat#{$size}-top {
         justify-content: flex-start;
     }
 
-    &.nat-bottom {
+    &.nat#{$size}-bottom {
         justify-content: flex-end;
     }
 
-    &.nat-left {
+    &.nat#{$size}-left {
         align-items: flex-start;
     }
 
-    &.nat-right {
+    &.nat#{$size}-right {
         align-items: flex-end;
     }
 
-    &.nat-distribute {
+    &.nat#{$size}-align {
+        align-items: center;
+    }
+
+    &.nat#{$size}-distribute {
         justify-content: space-between;
     }
 
-    @if ($size) {
-        & > .nat#{$size}-expand {
-            @include nat-expand('height');
-        }
-    } @else {
-        & > .nat-expand {
-            @include nat-expand('height');
-        }
+    & > .nat#{$size}-expand {
+        @include nat-expand('height');
     }
 }
 
 .nat-vertical {
-    @include nat-vertical(null);
+    @include nat-vertical('');
+    @each $key, $value in variables.$breakpoints {
+        @include mixins.media($key) {
+            & > .nat-#{$key}-expand {
+                @include nat-expand('height');
+            }
+        }
+    }
 }
 
 @mixin nat-horizontal($size) {
     display: flex;
     flex-direction: row;
 
-    &.nat-top {
+    &.nat#{$size}-top {
         align-items: flex-start;
     }
 
-    &.nat-bottom {
+    &.nat#{$size}-bottom {
         align-items: flex-end;
     }
 
-    &.nat-left {
+    &.nat#{$size}-align {
+        align-items: center;
+    }
+
+    &.nat#{$size}-left {
         justify-content: flex-start;
     }
 
-    &.nat-right {
+    &.nat#{$size}-right {
         justify-content: flex-end;
     }
 
-    &.nat-distribute {
+    &.nat#{$size}-distribute {
         justify-content: space-between;
     }
 
-    @if ($size) {
-        & > .nat#{$size}-expand {
-            @include nat-expand('width');
-        }
-    } @else {
-        & > .nat-expand {
-            @include nat-expand('width');
-        }
+    & > .nat#{$size}-expand {
+        @include nat-expand('width');
     }
 }
 
 .nat-horizontal {
-    @include nat-horizontal(null);
+    @include nat-horizontal('');
+
+    @each $key, $value in variables.$breakpoints {
+        @include mixins.media($key) {
+            & > .nat-#{$key}-expand {
+                @include nat-expand('width');
+            }
+        }
+    }
 }
 
 .nat-gap {
@@ -191,11 +189,20 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
 }
 
 .nat-no-collapse {
-    flex-shrink: 0;
+    min-width: fit-content;
 }
 
 .nat-no-expand {
     flex-grow: 0;
+}
+
+/* attribute selector allows to abstract gap sizes nat-gap-15 */
+[class*='nat-horizontal'][class*='nat-gap'] > * {
+    margin-right: 0 !important;
+}
+
+[class*='nat-vertical'][class*='nat-gap'] > * {
+    margin-bottom: 0 !important;
 }
 
 @each $key, $value in variables.$breakpoints {
@@ -214,6 +221,14 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
 
         .nat-#{$key}-expand {
             flex: 1 1 1e-9px;
+        }
+
+        [class*='nat-#{$key}-horizontal'][class*='nat-#{$key}-gap'] > * {
+            margin-right: 0 !important;
+        }
+
+        [class*='nat-#{$key}-vertical'][class*='nat-#{$key}-gap'] > * {
+            margin-bottom: 0 !important;
         }
     }
 }

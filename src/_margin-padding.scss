@@ -3,8 +3,7 @@
 }
 
 .nat-padding-horizontal {
-    padding-left: var(--natural-default-spacing) !important;
-    padding-right: var(--natural-default-spacing) !important;
+    padding-inline: var(--natural-default-spacing) !important;
 }
 
 .nat-padding-bottom {
@@ -24,8 +23,7 @@
 }
 
 .nat-padding-vertical {
-    padding-top: var(--natural-default-spacing) !important;
-    padding-bottom: var(--natural-default-spacing) !important;
+    padding-block: var(--natural-default-spacing) !important;
 }
 
 .nat-no-padding {
@@ -33,13 +31,11 @@
 }
 
 .nat-no-padding-vertical {
-    padding-bottom: 0 !important;
-    padding-top: 0 !important;
+    padding-block: 0 !important;
 }
 
 .nat-no-padding-horizontal {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-inline: 0 !important;
 }
 
 .nat-no-padding-right {
@@ -79,13 +75,11 @@
 }
 
 .nat-margin-horizontal {
-    margin-left: var(--natural-default-spacing) !important;
-    margin-right: var(--natural-default-spacing) !important;
+    margin-inline: var(--natural-default-spacing) !important;
 }
 
 .nat-margin-vertical {
-    margin-top: var(--natural-default-spacing) !important;
-    margin-bottom: var(--natural-default-spacing) !important;
+    margin-block: var(--natural-default-spacing) !important;
 }
 
 .nat-no-margin {
@@ -93,13 +87,11 @@
 }
 
 .nat-no-margin-vertical {
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
+    margin-block: 0 !important;
 }
 
 .nat-no-margin-horizontal {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-inline: 0 !important;
 }
 
 .nat-no-margin-right {
