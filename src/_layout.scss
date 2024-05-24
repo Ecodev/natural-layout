@@ -48,28 +48,11 @@
 @mixin nat-expand($orientation) {
     flex: 1 1 1e-9px;
 
-    &-20 {
-        max-#{$orientation}: 20%;
-    }
-
-    &-25 {
-        max-#{$orientation}: 25%;
-    }
-
-    &-33 {
-        max-#{$orientation}: 33%;
-    }
-
-    &-50 {
-        max-#{$orientation}: 50%;
-    }
-
-    &-66 {
-        max-#{$orientation}: 66%;
-    }
-
-    &-75 {
-        max-#{$orientation}: 75%;
+    $expands: 20, 25, 33, 50, 66, 75;
+    @each $expand in $expands {
+        &-#{$expand} {
+            max-#{$orientation}: calc($expand * 1%);
+        }
     }
 }
 
