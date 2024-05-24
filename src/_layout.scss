@@ -48,7 +48,7 @@
 @mixin nat-expand($orientation) {
     flex: 1 1 1e-9px;
 
-    $expands: 20, 25, 33, 50, 66, 75;
+    $expands: 25, 33, 50, 66, 75;
     @each $expand in $expands {
         &-#{$expand} {
             max-#{$orientation}: calc($expand * 1%);

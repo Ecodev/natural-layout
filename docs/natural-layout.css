@@ -158,9 +158,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
 .nat-vertical > .nat-expand {
   flex: 1 1 0.000000001px;
 }
-.nat-vertical > .nat-expand-20 {
-  max-height: 20%;
-}
 .nat-vertical > .nat-expand-25 {
   max-height: 25%;
 }
@@ -179,9 +176,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
 @media screen and (min-width: 600px) {
   .nat-vertical > .nat-sm-expand {
     flex: 1 1 0.000000001px;
-  }
-  .nat-vertical > .nat-sm-expand-20 {
-    max-height: 20%;
   }
   .nat-vertical > .nat-sm-expand-25 {
     max-height: 25%;
@@ -203,9 +197,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
   .nat-vertical > .nat-md-expand {
     flex: 1 1 0.000000001px;
   }
-  .nat-vertical > .nat-md-expand-20 {
-    max-height: 20%;
-  }
   .nat-vertical > .nat-md-expand-25 {
     max-height: 25%;
   }
@@ -226,9 +217,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
   .nat-vertical > .nat-lg-expand {
     flex: 1 1 0.000000001px;
   }
-  .nat-vertical > .nat-lg-expand-20 {
-    max-height: 20%;
-  }
   .nat-vertical > .nat-lg-expand-25 {
     max-height: 25%;
   }
@@ -248,9 +236,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
 @media screen and (min-width: 1920px) {
   .nat-vertical > .nat-xl-expand {
     flex: 1 1 0.000000001px;
-  }
-  .nat-vertical > .nat-xl-expand-20 {
-    max-height: 20%;
   }
   .nat-vertical > .nat-xl-expand-25 {
     max-height: 25%;
@@ -294,9 +279,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
 .nat-horizontal > .nat-expand {
   flex: 1 1 0.000000001px;
 }
-.nat-horizontal > .nat-expand-20 {
-  max-width: 20%;
-}
 .nat-horizontal > .nat-expand-25 {
   max-width: 25%;
 }
@@ -315,9 +297,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
 @media screen and (min-width: 600px) {
   .nat-horizontal > .nat-sm-expand {
     flex: 1 1 0.000000001px;
-  }
-  .nat-horizontal > .nat-sm-expand-20 {
-    max-width: 20%;
   }
   .nat-horizontal > .nat-sm-expand-25 {
     max-width: 25%;
@@ -339,9 +318,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
   .nat-horizontal > .nat-md-expand {
     flex: 1 1 0.000000001px;
   }
-  .nat-horizontal > .nat-md-expand-20 {
-    max-width: 20%;
-  }
   .nat-horizontal > .nat-md-expand-25 {
     max-width: 25%;
   }
@@ -362,9 +338,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
   .nat-horizontal > .nat-lg-expand {
     flex: 1 1 0.000000001px;
   }
-  .nat-horizontal > .nat-lg-expand-20 {
-    max-width: 20%;
-  }
   .nat-horizontal > .nat-lg-expand-25 {
     max-width: 25%;
   }
@@ -384,9 +357,6 @@ Get from starting size/breakpoint to ending $size/breakpoint (excluding it).
 @media screen and (min-width: 1920px) {
   .nat-horizontal > .nat-xl-expand {
     flex: 1 1 0.000000001px;
-  }
-  .nat-horizontal > .nat-xl-expand-20 {
-    max-width: 20%;
   }
   .nat-horizontal > .nat-xl-expand-25 {
     max-width: 25%;
@@ -534,9 +504,6 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
   .nat-sm-vertical > .nat-sm-expand {
     flex: 1 1 0.000000001px;
   }
-  .nat-sm-vertical > .nat-sm-expand-20 {
-    max-height: 20%;
-  }
   .nat-sm-vertical > .nat-sm-expand-25 {
     max-height: 25%;
   }
@@ -576,9 +543,6 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
   }
   .nat-sm-horizontal > .nat-sm-expand {
     flex: 1 1 0.000000001px;
-  }
-  .nat-sm-horizontal > .nat-sm-expand-20 {
-    max-width: 20%;
   }
   .nat-sm-horizontal > .nat-sm-expand-25 {
     max-width: 25%;
@@ -694,9 +658,6 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
   .nat-md-vertical > .nat-md-expand {
     flex: 1 1 0.000000001px;
   }
-  .nat-md-vertical > .nat-md-expand-20 {
-    max-height: 20%;
-  }
   .nat-md-vertical > .nat-md-expand-25 {
     max-height: 25%;
   }
@@ -736,9 +697,6 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
   }
   .nat-md-horizontal > .nat-md-expand {
     flex: 1 1 0.000000001px;
-  }
-  .nat-md-horizontal > .nat-md-expand-20 {
-    max-width: 20%;
   }
   .nat-md-horizontal > .nat-md-expand-25 {
     max-width: 25%;
@@ -854,9 +812,6 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
   .nat-lg-vertical > .nat-lg-expand {
     flex: 1 1 0.000000001px;
   }
-  .nat-lg-vertical > .nat-lg-expand-20 {
-    max-height: 20%;
-  }
   .nat-lg-vertical > .nat-lg-expand-25 {
     max-height: 25%;
   }
@@ -896,9 +851,6 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
   }
   .nat-lg-horizontal > .nat-lg-expand {
     flex: 1 1 0.000000001px;
-  }
-  .nat-lg-horizontal > .nat-lg-expand-20 {
-    max-width: 20%;
   }
   .nat-lg-horizontal > .nat-lg-expand-25 {
     max-width: 25%;
@@ -1014,9 +966,6 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
   .nat-xl-vertical > .nat-xl-expand {
     flex: 1 1 0.000000001px;
   }
-  .nat-xl-vertical > .nat-xl-expand-20 {
-    max-height: 20%;
-  }
   .nat-xl-vertical > .nat-xl-expand-25 {
     max-height: 25%;
   }
@@ -1056,9 +1005,6 @@ All no 100% nat-expand-xx and nat-xx-expand-yy
   }
   .nat-xl-horizontal > .nat-xl-expand {
     flex: 1 1 0.000000001px;
-  }
-  .nat-xl-horizontal > .nat-xl-expand-20 {
-    max-width: 20%;
   }
   .nat-xl-horizontal > .nat-xl-expand-25 {
     max-width: 25%;
