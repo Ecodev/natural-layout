@@ -38,13 +38,13 @@
                 <ul>
                     <li><a href="#section-padding">Padding</a></li>
                     <li><a href="#section-margin">Margin</a></li>
-                    <li><a href="#section-alignments">Alignments</a></li>
                     <li><a href="#section-center">Center</a></li>
                 </ul>
             </li>
             <li>
                 <strong>Responsive classes</strong>
                 <ul>
+                    <li><a href="#section-alignments">Alignments</a></li>
                     <li><a href="#section-hide">Show/Hide</a></li>
                     <li><a href="#section-gap">Gap</a></li>
                     <li><a href="#section-horizontal">Horizontal</a></li>
@@ -121,32 +121,6 @@ $breakpoints: (
             <div class="nat-margin">nat-margin</div>
             <div class="nat-margin-vertical">nat-margin-vertical</div>
             <div class="nat-margin-horizontal">nat-margin-horizontal</div>
-        </div>
-
-        <h2 id="section-alignments">Alignments</h2>
-        <p>Alignments <strong>nat-bottom, nat-top, nat-left, nat-right</strong> can be combined.</p>
-        <p>Align bottom right</p>
-        <span class="docs-class">nat-horizontal nat-bottom nat-right</span>
-        <div class="test nat-horizontal nat-bottom nat-right" style="height: 100px">
-            <div>xxx</div>
-            <div>
-                xxx
-                <br />
-                xxx
-            </div>
-            <div>xxx</div>
-        </div>
-
-        <p>Distribute uses space-around</p>
-        <span class="docs-class">nat-distribute</span>
-        <div class="test nat-horizontal nat-distribute" style="height: 100px">
-            <div>xxx</div>
-            <div>
-                xxxxxxx
-                <br />
-                xxxxxxx
-            </div>
-            <div>xxx</div>
         </div>
 
         <h2 id="section-center">nat-center</h2>
@@ -228,6 +202,33 @@ $breakpoints: (
         </div>
 
         <h1>Responsive HTML markup</h1>
+
+        <h2 id="section-alignments">Alignments</h2>
+        <p>Alignments <strong>nat-top, nat-right, nat-bottom, nat-left</strong> can be combined.</p>
+        <p>Align bottom right</p>
+        <span class="docs-class">nat-horizontal nat-bottom nat-right</span>
+        <div class="test nat-horizontal nat-bottom nat-right" style="height: 100px">
+            <div>xxx</div>
+            <div>
+                xxx
+                <br />
+                xxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <p>Distribute uses space-around</p>
+        <span class="docs-class">nat-distribute</span>
+        <div class="test nat-horizontal nat-distribute" style="height: 100px">
+            <div>xxx</div>
+            <div>
+                xxxxxxx
+                <br />
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
         <h2 id="section-hide">nat-hide</h2>
         <p>Usage : <span class="docs-class">nat-hide / nat-sm-hide / nat-show / nat-sm-show</span></p>
 
@@ -276,7 +277,7 @@ $breakpoints: (
         </div>
 
         <h2 id="section-gap">nat-gap</h2>
-        <p>Must be combined with nat-horizontal or nat-vertical.</p>
+        <p>Must be combined with <strong>nat-horizontal</strong> or <strong>nat-vertical</strong>.</p>
         <p>Sizes : <strong>0, 5, 10, 15, 20, 30</strong></p>
         <p>Example where gap increases with screen size :</p>
         <span class="docs-class">nat-horizontal nat-gap-0 nat-sm-gap-5 nat-md-gap-10 nat-lg-gap-15 nat-xl-gap-20</span>
@@ -388,7 +389,7 @@ $breakpoints: (
         </div>
 
         <h2 id="section-expand">nat-expand</h2>
-        <p>Apply on nat-horizontal or nat-vertical children.</p>
+        <p>Apply on <strong>nat-horizontal</strong> or <strong>nat-vertical</strong> children.</p>
         <p>Available sizes : <strong>25, 33, 50, 66, 75</strong>.</p>
 
         <div class="test nat-horizontal nat-gap">
