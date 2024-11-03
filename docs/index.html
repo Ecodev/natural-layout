@@ -31,25 +31,26 @@
         <p><a href="https://github.com/Ecodev/natural-layout">View on GitHub</a></p>
 
         <ul>
-            <li><a href="#section-start">Start</a></li>
+            <li><a href="#section-start">Getting started</a></li>
             <li><a href="#section-scss">SCSS media query usage</a></li>
             <li>
                 <strong>Unresponsive classes</strong>
                 <ul>
-                    <li><a href="#section-padding">Padding</a></li>
-                    <li><a href="#section-margin">Margin</a></li>
-                    <li><a href="#section-center">Center</a></li>
+                    <li><a href="#section-nat-padding">nat-padding</a></li>
+                    <li><a href="#section-nat-margin">nat-margin</a></li>
+                    <li><a href="#section-nat-center">nat-center</a></li>
                 </ul>
             </li>
             <li>
                 <strong>Responsive classes</strong>
                 <ul>
-                    <li><a href="#section-alignments">Alignments</a></li>
-                    <li><a href="#section-hide">Show/Hide</a></li>
-                    <li><a href="#section-gap">Gap</a></li>
-                    <li><a href="#section-horizontal">Horizontal</a></li>
-                    <li><a href="#section-vertical">Vertical</a></li>
-                    <li><a href="#section-expand">Expand</a></li>
+                    <li><a href="#section-nat-hide">nat-show / nat-hide</a></li>
+                    <li><a href="#section-nat-top">nat-top / nat-right / nat-bottom / nat-left</a></li>
+                    <li><a href="#section-nat-align">nat-align</a></li>
+                    <li><a href="#section-nat-gap">nat-gap</a></li>
+                    <li><a href="#section-nat-horizontal">nat-horizontal</a></li>
+                    <li><a href="#section-nat-vertical">nat-vertical</a></li>
+                    <li><a href="#section-nat-expand">nat-expand</a></li>
                 </ul>
             </li>
         </ul>
@@ -107,7 +108,7 @@ $breakpoints: (
 
         <h1>Unresponsive html markup</h1>
 
-        <h2 id="section-padding">nat-padding</h2>
+        <h2 id="section-nat-padding">nat-padding</h2>
         <p>Padding on all sides / top and down / left and right :</p>
         <div class="test docs-no-padding">
             <div class="nat-padding">nat-padding</div>
@@ -115,7 +116,7 @@ $breakpoints: (
             <div class="nat-padding-horizontal">nat-padding-horizontal</div>
         </div>
 
-        <h2 id="section-margin">nat-margin</h2>
+        <h2 id="section-nat-margin">nat-margin</h2>
         <p>Margin on all sides / top and bottom / left and right :</p>
         <div class="test docs-no-margin">
             <div class="nat-margin">nat-margin</div>
@@ -123,13 +124,13 @@ $breakpoints: (
             <div class="nat-margin-horizontal">nat-margin-horizontal</div>
         </div>
 
-        <h2 id="section-center">nat-center</h2>
+        <h2 id="section-nat-center">nat-center</h2>
         <p>
             <strong>nat-center</strong> is magic. If used alone it centers both axis. If used with another axis, centers
             on the complementary axis.
         </p>
 
-        <p>Horizontal center</p>
+        <p>Horizontal center :</p>
         <span class="docs-class">nat-horizontal nat-center</span>
         <div class="test nat-horizontal nat-center" style="height: 100px">
             <div>xxx</div>
@@ -141,7 +142,7 @@ $breakpoints: (
             <div>xxx</div>
         </div>
 
-        <p>Vertical center</p>
+        <p>Vertical center :</p>
         <span class="docs-class">nat-vertical nat-center</span>
         <div class="test nat-vertical nat-center" style="height: 150px">
             <div>xxx</div>
@@ -153,7 +154,7 @@ $breakpoints: (
             <div>xxx</div>
         </div>
 
-        <p>Horizontal top centered</p>
+        <p>Horizontal top centered :</p>
         <span class="docs-class">nat-horizontal nat-center nat-top</span>
         <div class="test nat-horizontal nat-center nat-top" style="height: 100px">
             <div>xxx</div>
@@ -165,7 +166,7 @@ $breakpoints: (
             <div>xxx</div>
         </div>
 
-        <p>Horizontal right centered</p>
+        <p>Horizontal right centered :</p>
         <span class="docs-class">nat-horizontal nat-center nat-right</span>
         <div class="test nat-horizontal nat-center nat-right" style="height: 100px">
             <div>xxx</div>
@@ -177,7 +178,7 @@ $breakpoints: (
             <div>xxx</div>
         </div>
 
-        <p>Vertical top centered</p>
+        <p>Vertical top centered :</p>
         <span class="docs-class">nat-vertical nat-center nat-top</span>
         <div class="test nat-vertical nat-center nat-top" style="height: 200px">
             <div>xxx</div>
@@ -189,7 +190,7 @@ $breakpoints: (
             <div>xxx</div>
         </div>
 
-        <p>Vertical right centered</p>
+        <p>Vertical right centered :</p>
         <span class="docs-class">nat-vertical nat-center nat-right</span>
         <div class="test nat-vertical nat-center nat-right" style="height: 200px">
             <div>xxx</div>
@@ -203,33 +204,7 @@ $breakpoints: (
 
         <h1>Responsive HTML markup</h1>
 
-        <h2 id="section-alignments">Alignments</h2>
-        <p>Alignments <strong>nat-top, nat-right, nat-bottom, nat-left</strong> can be combined.</p>
-        <p>Align bottom right</p>
-        <span class="docs-class">nat-horizontal nat-bottom nat-right</span>
-        <div class="test nat-horizontal nat-bottom nat-right" style="height: 100px">
-            <div>xxx</div>
-            <div>
-                xxx
-                <br />
-                xxx
-            </div>
-            <div>xxx</div>
-        </div>
-
-        <p>Distribute uses space-around</p>
-        <span class="docs-class">nat-distribute</span>
-        <div class="test nat-horizontal nat-distribute" style="height: 100px">
-            <div>xxx</div>
-            <div>
-                xxxxxxx
-                <br />
-                xxxxxxx
-            </div>
-            <div>xxx</div>
-        </div>
-
-        <h2 id="section-hide">nat-hide</h2>
+        <h2 id="section-nat-hide">nat-show / nat-hide</h2>
         <p>Usage : <span class="docs-class">nat-hide / nat-sm-hide / nat-show / nat-sm-show</span></p>
 
         <p>Breakpoints are only the start of size. To focus a single size, combine multiple classes</p>
@@ -276,7 +251,47 @@ $breakpoints: (
             </div>
         </div>
 
-        <h2 id="section-gap">nat-gap</h2>
+        <h2 id="section-nat-top">nat-top / nat-right / nat-bottom / nat-left</h2>
+        <p>Alignments <strong>nat-top, nat-right, nat-bottom, nat-left</strong> can be combined.</p>
+        <p>Align bottom right :</p>
+        <span class="docs-class">nat-horizontal nat-bottom nat-right</span>
+        <div class="test nat-horizontal nat-bottom nat-right" style="height: 100px">
+            <div>xxx</div>
+            <div>
+                xxx
+                <br />
+                xxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <p>Distribute uses space-around :</p>
+        <span class="docs-class">nat-distribute</span>
+        <div class="test nat-horizontal nat-distribute" style="height: 100px">
+            <div>xxx</div>
+            <div>
+                xxxxxxx
+                <br />
+                xxxxxxx
+            </div>
+            <div>xxx</div>
+        </div>
+
+        <h2 id="section-nat-align">nat-align</h2>
+        <p>Must be combined with <strong>nat-horizontal</strong> or <strong>nat-vertical</strong>.</p>
+        <p>Example with horizontal :</p>
+        <span class="docs-class">nat-horizontal nat-align</span>
+        <div class="test nat-horizontal nat-align" style="height: 200px">
+            <div>xxx</div>
+        </div>
+
+        <p>Example with vertical :</p>
+        <span class="docs-class">nat-vertical nat-align</span>
+        <div class="test nat-vertical nat-align" style="height: 200px">
+            <div>xxx</div>
+        </div>
+
+        <h2 id="section-nat-gap">nat-gap</h2>
         <p>Must be combined with <strong>nat-horizontal</strong> or <strong>nat-vertical</strong>.</p>
         <p>Sizes : <strong>0, 5, 10, 15, 20, 30</strong></p>
         <p>Example where gap increases with screen size :</p>
@@ -313,7 +328,7 @@ $breakpoints: (
             </div>
         </div>
 
-        <p>Gap takes priority on margin in same axis to prevent addition.</p>
+        <p>Gap takes priority on margin in same axis to prevent addition :</p>
         <div class="test nat-vertical nat-gap-15">
             <div class="nat-margin-bottom">nat-margin-bottom</div>
             <div class="nat-margin-bottom">nat-margin-bottom</div>
@@ -323,7 +338,7 @@ $breakpoints: (
             <div class="nat-margin-right">nat-margin-bottom</div>
         </div>
 
-        <h2 id="section-horizontal">nat-horizontal</h2>
+        <h2 id="section-nat-horizontal">nat-horizontal</h2>
         <span class="docs-class">nat-horizontal</span>
         <div class="test nat-horizontal">
             <div>111</div>
@@ -337,7 +352,7 @@ $breakpoints: (
             <div>999</div>
         </div>
 
-        <p>Wrap</p>
+        <p>Wrap :</p>
         <span class="docs-class">nat-horizontal nat-wrap</span>
         <div class="test nat-horizontal nat-wrap">
             <div>111</div>
@@ -351,6 +366,7 @@ $breakpoints: (
             <div>999</div>
         </div>
 
+        <p>Wrap reverse:</p>
         <span class="docs-class">nat-horizontal nat-wrap-reverse</span>
         <div class="test nat-horizontal nat-wrap-reverse">
             <div>111</div>
@@ -364,7 +380,7 @@ $breakpoints: (
             <div>999</div>
         </div>
 
-        <h2 id="section-vertical">nat-vertical</h2>
+        <h2 id="section-nat-vertical">nat-vertical</h2>
         <span class="docs-class">nat-vertical</span>
         <div class="test nat-vertical">
             <div>xxx</div>
@@ -372,7 +388,7 @@ $breakpoints: (
             <div>xxx</div>
         </div>
 
-        <p>Align bottom right</p>
+        <p>Align bottom right :</p>
         <span class="docs-class">nat-vertical nat-bottom nat-right</span>
         <div class="test nat-vertical nat-bottom nat-right" style="height: 200px">
             <div>xxx</div>
@@ -388,7 +404,7 @@ $breakpoints: (
             <div>xxx</div>
         </div>
 
-        <h2 id="section-expand">nat-expand</h2>
+        <h2 id="section-nat-expand">nat-expand</h2>
         <p>Apply on <strong>nat-horizontal</strong> or <strong>nat-vertical</strong> children.</p>
         <p>Available sizes : <strong>25, 33, 50, 66, 75</strong>.</p>
 
