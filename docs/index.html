@@ -59,13 +59,10 @@
 
         <h1 id="section-start">Getting started</h1>
 
+        <p>Available breakpoints prefixes : <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>.</p>
         <p>
-            Available breakpoints prefixes : <strong>sm</strong>, <strong>md</strong>, <strong>lg</strong>,
-            <strong>xl</strong>.
-        </p>
-        <p>
-            <strong>xs</strong> does not exist because it is the default breakpoint. We design for
-            <strong>xs</strong> first, with <code>nat-vertical</code>, then adapt for other breakpoints if needed, with
+            <code>xs</code> does not exist because it is the default breakpoint. We design for <code>xs</code> first,
+            with <code>nat-vertical</code>, then adapt for other breakpoints if needed, with
             <code>nat-md-horizontal</code>.
         </p>
 
@@ -136,8 +133,8 @@ $breakpoints: (
 
         <h2 id="section-nat-center">nat-center</h2>
         <p>
-            <strong>nat-center</strong> is magic. If used alone it centers both axis. If used with another axis, centers
-            on the complementary axis.
+            <code>nat-center</code> is magic. If used alone it centers both axis. If used with another axis, centers on
+            the complementary axis.
         </p>
 
         <p>Horizontal center :</p>
@@ -262,7 +259,10 @@ $breakpoints: (
         </div>
 
         <h2 id="section-nat-top">nat-top / nat-right / nat-bottom / nat-left</h2>
-        <p>Alignments <strong>nat-top, nat-right, nat-bottom, nat-left</strong> can be combined.</p>
+        <p>
+            Alignments <code>nat-top</code>, <code>nat-right</code>, <code>nat-bottom</code>, <code>nat-left</code> can
+            be combined.
+        </p>
         <p>Align bottom right :</p>
         <span class="docs-class">nat-horizontal nat-bottom nat-right</span>
         <div class="test nat-horizontal nat-bottom nat-right" style="height: 100px">
@@ -276,7 +276,7 @@ $breakpoints: (
         </div>
 
         <h2 id="section-nat-distribute">nat-distribute</h2>
-        <p>Must be combined with <strong>nat-horizontal</strong> or <strong>nat-vertical</strong>.</p>
+        <p>Must be combined with <code>nat-horizontal</code> or <code>nat-vertical</code>.</p>
         <p>Distribute uses space-around :</p>
         <span class="docs-class">nat-distribute</span>
         <div class="test nat-horizontal nat-distribute" style="height: 100px">
@@ -290,7 +290,7 @@ $breakpoints: (
         </div>
 
         <h2 id="section-nat-align">nat-align</h2>
-        <p>Must be combined with <strong>nat-horizontal</strong> or <strong>nat-vertical</strong>.</p>
+        <p>Must be combined with <code>nat-horizontal</code> or <code>nat-vertical</code>.</p>
         <p>Example with horizontal :</p>
         <span class="docs-class">nat-horizontal nat-align</span>
         <div class="test nat-horizontal nat-align" style="height: 200px">
@@ -304,8 +304,10 @@ $breakpoints: (
         </div>
 
         <h2 id="section-nat-gap">nat-gap</h2>
-        <p>Must be combined with <strong>nat-horizontal</strong> or <strong>nat-vertical</strong>.</p>
-        <p>Sizes : <strong>0, 5, 10, 15, 20, 30</strong></p>
+        <p>Must be combined with <code>nat-horizontal</code> or <code>nat-vertical</code>.</p>
+        <p>
+            Sizes : <code>0</code>, <code>5</code>, <code>10</code>, <code>15</code>, <code>20</code>, <code>30</code>
+        </p>
         <p>Example where gap increases with screen size :</p>
         <span class="docs-class">nat-horizontal nat-gap-0 nat-sm-gap-5 nat-md-gap-10 nat-lg-gap-15 nat-xl-gap-20</span>
         <div class="test nat-horizontal nat-gap-0 nat-sm-gap-5 nat-md-gap-10 nat-lg-gap-15 nat-xl-gap-20">
@@ -417,8 +419,8 @@ $breakpoints: (
         </div>
 
         <h2 id="section-nat-expand">nat-expand</h2>
-        <p>Apply on <strong>nat-horizontal</strong> or <strong>nat-vertical</strong> children.</p>
-        <p>Available sizes : <strong>25, 33, 50, 66, 75</strong>.</p>
+        <p>Apply on <code>nat-horizontal</code> or <code>nat-vertical</code> children.</p>
+        <p>Available sizes : <code>25</code>, <code>33</code>, <code>50</code>, <code>66</code>, <code>75</code>.</p>
 
         <div class="test nat-horizontal nat-gap">
             <div>xxx</div>
