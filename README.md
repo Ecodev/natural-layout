@@ -5,13 +5,14 @@
 [![Latest Stable Version](https://img.shields.io/npm/v/@ecodev/natural-layout.svg)](https://www.npmjs.com/package/@ecodev/natural-layout)
 [![License](https://img.shields.io/npm/l/@ecodev/natural-layout.svg)](https://www.npmjs.com/package/@ecodev/natural-layout)
 
-This project is a collection of Angular Material components and various utilities classes for Angular projects.
+This is a collection CSS/SCSS utilities for responsive design. It is a replacement for the long deprecated `@angular/flex-layout`.
 
 ## Install
 
 ```bash
 yarn add @ecodev/natural-layout
 ```
+
 ## Documentation
 
 See https://ecodev.github.io/natural-layout
