@@ -3,6 +3,10 @@
     "description": "CSS layout library",
     "author": "Sam Baptista <samuel.baptista@ecodev.ch>",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Ecodev/natural-layout.git"
+    },
     "exports": {
         ".": {
             "sass": "./scss/natural-layout.scss"
