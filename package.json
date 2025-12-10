@@ -1,6 +1,5 @@
 {
     "name": "@ecodev/natural-layout",
-    "version": "2.0.1",
     "description": "CSS layout library",
     "author": "Sam Baptista <samuel.baptista@ecodev.ch>",
     "license": "MIT",
@@ -14,9 +13,8 @@
         "live-reload": "node ./node_modules/live-server/live-server.js docs",
         "sass-watch-lib": "sass --watch src/_main.scss docs/natural-layout.css",
         "sass-watch-docs": "sass --watch docs/docs.scss docs/docs.css",
-        "build": "rm -rf dist && sass src/_main.scss dist/natural-layout.css && cp -r src/ dist/scss && cp package.json dist && cd dist && yarn set-version && cd ../ && sass docs/docs.scss docs/docs.css",
-        "set-version": "yarn version --no-git-tag-version --new-version `git describe --tags --always`",
-        "release": "yarn build && cd dist && yarn publish --access public"
+        "build": "rm -rf dist && sass src/_main.scss dist/natural-layout.css && cp -r src/ dist/scss && cp package.json dist && yarn set-version && sass docs/docs.scss docs/docs.css",
+        "set-version": "cd dist && yarn version --no-git-tag-version --new-version `git describe --tags --always`"
     },
     "devDependencies": {
         "live-server": "^1.2.2",
