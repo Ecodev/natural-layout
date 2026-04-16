@@ -10,7 +10,7 @@ This is a collection CSS/SCSS utilities for responsive design. It is a replaceme
 ## Install
 
 ```bash
-yarn add @ecodev/natural-layout
+pnpm add @ecodev/natural-layout
 ```
 
 ## Documentation
@@ -21,5 +21,5 @@ See https://ecodev.github.io/natural-layout
 
 The most useful commands for development are:
 
-- `yarn dev` to start a development server
+- `pnpm dev` to start a development server
 - `git tag -am 1.2.3 1.2.3 && git push` to publish the lib to npm (via GitHub Actions `release` job)

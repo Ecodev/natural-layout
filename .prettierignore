@@ -1,3 +1,4 @@
 /dist/
 /docs/*.css
 /docs/*.map
+/pnpm-lock.yaml

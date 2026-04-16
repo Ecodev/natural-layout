@@ -17,9 +17,10 @@
         "live-reload": "node ./node_modules/live-server/live-server.js docs",
         "sass-watch-lib": "sass --watch src/_main.scss docs/natural-layout.css",
         "sass-watch-docs": "sass --watch docs/docs.scss docs/docs.css",
-        "build": "rm -rf dist && sass src/_main.scss dist/natural-layout.css && cp -r src/ dist/scss && cp package.json dist && yarn set-version && sass docs/docs.scss docs/docs.css",
-        "set-version": "cd dist && yarn version --no-git-tag-version --new-version `git describe --tags --always`"
+        "build": "rm -rf dist && sass src/_main.scss dist/natural-layout.css && cp -r src/ dist/scss && cp package.json dist && pnpm set-version && sass docs/docs.scss docs/docs.css",
+        "set-version": "cd dist && pnpm version `git describe --tags --always`"
     },
+    "packageManager": "pnpm@10.33.0",
     "devDependencies": {
         "live-server": "^1.2.2",
         "npm-run-all": "^4.1.5",
