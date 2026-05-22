@@ -1,5 +1,6 @@
 {
     "name": "@ecodev/natural-layout",
+    "version": "0.0.0",
     "description": "CSS layout library",
     "author": "Sam Baptista <samuel.baptista@ecodev.ch>",
     "license": "MIT",
