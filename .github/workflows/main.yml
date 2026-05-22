@@ -15,7 +15,7 @@ jobs:
                   cache: 'pnpm'
             - run: pnpm install --frozen-lockfile
             - run: pnpm build
-            - uses: actions/upload-artifact@v4
+            - uses: actions/upload-artifact@v7
               with:
                   name: dist
                   path: dist/
@@ -45,7 +45,7 @@ jobs:
             - uses: actions/checkout@v6
               with:
                   ref: ${{ github.ref }} # Otherwise our annotated tag is not fetched and we cannot get correct version
-            - uses: actions/download-artifact@v4
+            - uses: actions/download-artifact@v8
               with:
                   name: dist
                   path: dist/
