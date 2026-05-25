@@ -69,5 +69,4 @@ jobs:
             - name: Create release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-              run:
-                gh release create "$GITHUB_REF_NAME" --verify-tag --notes "$(git tag --format '%(contents:body)' --points-at)"
+              run: gh release create "$GITHUB_REF_NAME" --verify-tag --notes "$(git tag --format '%(contents:body)' --points-at)"
